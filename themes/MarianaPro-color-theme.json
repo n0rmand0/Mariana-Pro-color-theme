@@ -21,8 +21,8 @@
 		"button.hoverBackground": "#6699cc70",
 
 		"-- DROPDOWN CONTROL --": "A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.",
-		"dropdown.background": "#23292e",
-		"dropdown.listBackground": "#23292e",
+		"dropdown.background": "#ffffff20",
+		"dropdown.listBackground": "#ffffff20",
 
 		"-- INPUT CONTROL --": "Colors for input controls such as in the Search view or the Find/Replace dialog.",
 		"input.background": "#343D46",
@@ -56,13 +56,12 @@
 		"activityBar.background": "#23292e",
     "activityBar.dropBackground": "#3b4252",
     "activityBar.foreground": "#dddddd",
-    "activityBarBadge.background": "#DD5F65",
+    "activityBarBadge.background": "#dd4c53",
 		"activityBarBadge.foreground": "#fff",
 		
 		"-- SIDE BAR --": "The Side Bar contains views like the Explorer and Search.",
 		"sideBar.background": "#23292e",
     "sideBar.foreground": "#dddddd",
-		"sideBarTitle.foreground": "#dddddd",
 		"sideBar.border": "#23292e",
     "sideBarSectionHeader.background": "#23292e",
     "sideBarSectionHeader.foreground": "#dddddd",
@@ -131,26 +130,25 @@
 		"editorGutter.deletedBackground": "#DD5F65",
 			
 		"-- DIFF EDITOR COLORS --": "For coloring inserted and removed text, use either a background or a border color but not both.",
-		"diffEditor.insertedTextBackground":"#A3CE9E20",
-		"diffEditor.removedTextBackground": "#DD5F6520",
+		"diffEditor.insertedTextBackground":"#A3CE9E40",
+		"diffEditor.removedTextBackground": "#DD5F6540",
 
 		"-- EDITOR WIDGET COLORS --": "The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.",
-		"editorWidget.background": "#394049",
+		"editorWidget.background": "#23292e",
 		"editorSuggestWidget.background": "#ffffff20",
-		"editorWidget.border": "#00000070",
 		
 		"-- PEEK VIEW COLORS --": "Peek views are used to show references and declarations as a view inside the editor.",
 		"peekViewResult.background": "#394049",
 		"peekViewTitle.background": "#23292e",
 
 		"-- MERGE CONFLICTS --": "Merge conflict decorations are shown when the editor contains special diff ranges.",
-		"merge.currentHeaderBackground": "#FAC48050",
-		"merge.currentContentBackground": "#FAC48020",
-		"merge.incomingHeaderBackground": "#A3CE9E50",
-		"merge.incomingContentBackground": "#A3CE9E20",
+		"merge.currentHeaderBackground": "#FAC48070",
+		"merge.currentContentBackground": "#FAC48040",
+		"merge.incomingHeaderBackground": "#A3CE9E70",
+		"merge.incomingContentBackground": "#A3CE9E40",
 
 		"-- PANEL COLORS --": "Panels are shown below the editor area and contain views like Output and Integrated Terminal.",
-		"panel.background": "#394049",
+		"panel.background": "#1d1e22",
 		"panelTitle.activeBorder": "#6699cc",
 
 		"-- STATUS BAR COLORS --": "The Status Bar is shown in the bottom of the workbench.",
@@ -471,7 +469,7 @@
 			"name": "markup headings",
 			"scope": "markup.heading punctuation.definition.heading",
 			"settings": {
-				"foreground": "#f97b58"
+				"foreground": "#DD5F65"
 			}
 		},
 		{
