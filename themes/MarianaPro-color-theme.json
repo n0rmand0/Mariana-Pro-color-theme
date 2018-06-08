@@ -17,7 +17,7 @@
 
 		// BUTTON CONTROL - "A set of colors for button widgets such as Open Folder button in the Explorer of a new window.",
 		"button.background": "#6699cc",
-		"button.foreground": "#dddddd",
+		"button.foreground": "#ffffff",
 		"button.hoverBackground": "#6699cc70",
 
 		// DROPDOWN CONTROL - "A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.",
@@ -126,6 +126,8 @@
 		"editorOverviewRuler.deletedForeground": "#FF6347",
 		"editorOverviewRuler.errorForeground": "#FF6347",
 		"editorOverviewRuler.warningForeground": "#ebcb8b",
+		"editorOverviewRuler.infoForeground": "#88c0d066",
+		"editorOverviewRuler.bracketMatchForeground": "#88c0d066",
 
 		"editorGutter.modifiedBackground": "#ffd386",
 		"editorGutter.addedBackground": "#A3CE9E",
@@ -177,10 +179,35 @@
 		"notificationCenterHeader.foreground": "#DDDDDD",
 		"notificationCenterHeader.background": "#23292e",
 
+		// EXTENSIONS
+		"extensionButton.prominentForeground": "#ffffff",
+    "extensionButton.prominentBackground": "#6699cc",
+		"extensionButton.prominentHoverBackground": "#6699cc70",
+		
 		// QUICK PICKER - "",
 		"pickerGroup.border": "#6699cc",
 		"pickerGroup.foreground": "#6699cc",
 
+		// INTEGRATED TERMINAL COLORS
+		"terminal.ansiBrightBlack": "#000",
+		"terminal.ansiBlack": "#000",
+		"terminal.ansiBlue": "#6699cc",
+		"terminal.ansiBrightBlue": "#6699cc",
+		"terminal.ansiBrightCyan": "#6699cc",
+		"terminal.ansiCyan": "#6699cc",
+		"terminal.ansiBrightMagenta": "#c594c5",
+		"terminal.ansiMagenta": "#c594c5",
+		"terminal.ansiBrightRed": "#FF6347",
+		"terminal.ansiRed": "#FF6347",
+		"terminal.ansiYellow": "#ffd386",
+		"terminal.ansiBrightYellow": "#ffd386",
+		"terminal.ansiBrightGreen": "#A3CE9E",
+		"terminal.ansiGreen": "#A3CE9E",
+		"terminal.ansiWhite": "#dddddd",
+		"terminal.selectionBackground": "#dddddd30",
+		"terminalCursor.background": "#dddddd30",
+		"terminalCursor.foreground": "#dddddd",
+		
 		// GIT COLORS - "",
 		"gitDecoration.modifiedResourceForeground": "#ffd386",
 		"gitDecoration.deletedResourceForeground": "#FF6347",
