@@ -56,7 +56,7 @@
 		"activityBar.background": "#23292e",
     "activityBar.dropBackground": "#3b4252",
     "activityBar.foreground": "#dddddd",
-    "activityBarBadge.background": "#dd4c53",
+    "activityBarBadge.background": "#DD5F65",
 		"activityBarBadge.foreground": "#fff",
 		
 		"-- SIDE BAR --": "The Side Bar contains views like the Explorer and Search.",
