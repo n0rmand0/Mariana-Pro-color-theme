@@ -1,9 +1,10 @@
 {
-    "name": "MarianaPro",
+    "name": "mariana-pro",
     "displayName": "Mariana Pro",
     "description": "A complete syntax theme for VS Code based on Sublime Text's Mariana",
     "version": "0.0.1",
-    "publisher": "ricky.normandeau",
+    "publisher": "rickynormandeau",
+    "repository": "https://github.com/n0rmand0/Mariana-Pro-color-theme",
     "engines": {
         "vscode": "^1.23.0"
     },

@@ -2,192 +2,195 @@
 	"name": "Mariana (Pro)",
 	"type": "dark",
 	"colors": {
-		"-- COLOR REFERENCE --": "https://code.visualstudio.com/docs/getstarted/theme-color-reference",
+		// COLOR REFERENCE: "https://code.visualstudio.com/docs/getstarted/theme-color-reference",
 
-		"-- BASE COLORS --": "",
+		//  BASE COLORS 
 		"focusBorder": "#434c5ead",
 		"foreground": "#dddddd",
 		"selection.background": "#88c0d070",
 		"widget.shadow": "#00000020",
-			
-		"-- TEXT COLORS --": "Colors inside a text document, such as the welcome page.",
+
+		// TEXT COLORS - "Colors inside a text document, such as the welcome page.",
 		"textLink.activeForeground": "#6699cc",
 		"textLink.foreground": "#6699cc",
-		"textPreformat.foreground":"#6699cc",
+		"textPreformat.foreground": "#6699cc",
 
-		"-- BUTTON CONTROL --": "A set of colors for button widgets such as Open Folder button in the Explorer of a new window.",
+		// BUTTON CONTROL - "A set of colors for button widgets such as Open Folder button in the Explorer of a new window.",
 		"button.background": "#6699cc",
 		"button.foreground": "#dddddd",
 		"button.hoverBackground": "#6699cc70",
 
-		"-- DROPDOWN CONTROL --": "A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.",
+		// DROPDOWN CONTROL - "A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.",
 		"dropdown.background": "#ffffff20",
 		"dropdown.listBackground": "#ffffff20",
 
-		"-- INPUT CONTROL --": "Colors for input controls such as in the Search view or the Find/Replace dialog.",
+		// INPUT CONTROL - "Colors for input controls such as in the Search view or the Find/Replace dialog.",
 		"input.background": "#343D46",
 		"input.border": "#343D46",
 		"input.foreground": "#dddddd",
 		"input.placeholderForeground": "#dddddd70",
 
-		"-- SCROLL BAR CONTROL --": "Colors for input controls such as in the Search view or the Find/Replace dialog.",
+		// SCROLL BAR CONTROL - "Colors for input controls such as in the Search view or the Find/Replace dialog.",
 		"scrollbar.shadow": "#00000000",
 
-		"-- BADGE --": "Badges are small information labels, for example, search results count.",
+		// BADGE - "Badges are small information labels, for example, search results count.",
 		"badge.foreground": "#FFFFFF",
-		"badge.background": "#DD5F65",
+		"badge.background": "#FF6347",
 
-		"-- PROGRESS BAR --": "",
+		// PROGRESS BAR - "",
 		"progressBar.background": "#23292e",
 
-		"-- LIST AND TREES --": "Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.",
+		// LIST AND TREES - "Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.",
 		"list.activeSelectionBackground": "#434c5ead",
-    "list.activeSelectionForeground": "#dddddd",
-    "list.inactiveSelectionBackground": "#434c5e4d",
-    "list.inactiveSelectionForeground": "#dddddd",
-    "list.hoverForeground": "#eceff4",
-    "list.focusForeground": "#dddddd",
-    "list.focusBackground": "#434c5ead",
-    "list.hoverBackground": "#434c5e4d",
-    "list.dropBackground": "#434c5ead",
+		"list.activeSelectionForeground": "#dddddd",
+		"list.inactiveSelectionBackground": "#434c5e4d",
+		"list.inactiveSelectionForeground": "#dddddd",
+		"list.hoverForeground": "#eceff4",
+		"list.focusForeground": "#dddddd",
+		"list.focusBackground": "#434c5ead",
+		"list.hoverBackground": "#434c5e4d",
+		"list.dropBackground": "#434c5ead",
 		"list.highlightForeground": "#fff",
+		"list.errorForeground": "#FF6347",
+		"list.warningForeground": "#ffd386",
 
-		"-- ACTIVITY BAR --": "The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar.",
+		// ACTIVITY BAR - "The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar.",
 		"activityBar.background": "#23292e",
-    "activityBar.dropBackground": "#3b4252",
-    "activityBar.foreground": "#dddddd",
-    "activityBarBadge.background": "#DD5F65",
+		"activityBar.dropBackground": "#3b4252",
+		"activityBar.foreground": "#dddddd",
+		"activityBarBadge.background": "#FF6347",
 		"activityBarBadge.foreground": "#fff",
-		
-		"-- SIDE BAR --": "The Side Bar contains views like the Explorer and Search.",
-		"sideBar.background": "#23292e",
-    "sideBar.foreground": "#dddddd",
-		"sideBar.border": "#23292e",
-    "sideBarSectionHeader.background": "#23292e",
-    "sideBarSectionHeader.foreground": "#dddddd",
-		"sideBarTitle.foreground": "#dddddd",
-		
 
-		"-- EDITOR GROUPS & TABS --": "Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.",
+		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
+		"sideBar.background": "#23292e",
+		"sideBar.foreground": "#dddddd",
+		"sideBar.border": "#23292e",
+		"sideBarSectionHeader.background": "#1d1e22",
+		"sideBarSectionHeader.foreground": "#dddddd",
+		"sideBarTitle.foreground": "#dddddd",
+
+
+		// EDITOR GROUPS & TABS - "Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.",
 		"editorGroup.background": "#23292e",
-    "editorGroup.border": "#00000000",
-    "editorGroup.dropBackground": "#23292e",
-    "editorGroupHeader.noTabsBackground": "#23292e",
-    "editorGroupHeader.tabsBackground": "#23292e",
+		"editorGroup.border": "#00000000",
+		"editorGroup.dropBackground": "#23292e",
+		"editorGroupHeader.noTabsBackground": "#23292e",
+		"editorGroupHeader.tabsBackground": "#23292e",
 		"editorGroupHeader.tabsBorder": "#394049",
 		"tab.activeBackground": "#394049",
-    "tab.activeForeground": "#dddddd",
-    "tab.border": "#00000000",
-    "tab.activeBorder": "#88c0d000",
-    "tab.unfocusedActiveBorder": "#88c0d000",
-    "tab.inactiveBackground": "#3940497c",
-    "tab.inactiveForeground": "#dddddd66",
-    "tab.unfocusedActiveForeground": "#dddddd99",
+		"tab.activeForeground": "#dddddd",
+		"tab.border": "#00000000",
+		"tab.activeBorder": "#88c0d000",
+		"tab.unfocusedActiveBorder": "#88c0d000",
+		"tab.inactiveBackground": "#3940497c",
+		"tab.inactiveForeground": "#dddddd66",
+		"tab.unfocusedActiveForeground": "#dddddd99",
 		"tab.unfocusedInactiveForeground": "#dddddd66",
-		
-		"-- EDITOR COLORS--": "The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.",
+
+		// EDITOR COLOR - "The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.",
 		"editor.background": "#343D46",
 		"editor.foreground": "#dddddd",
 
 		"editor.hoverHighlightBackground": "#88c0d030",
-		"editor.findMatchBackground": "#88c0d030",  
+		"editor.findMatchBackground": "#88c0d030",
 		"editor.findMatchHighlightBackground": "#88c0d030",
-    "editor.findRangeHighlightBackground": "#88c0d030",
-    "editor.lineHighlightBackground": "#48526652",
-    "editor.lineHighlightBorder": "#434c5e52",
-    "editor.inactiveSelectionBackground": "#434c5ecc",
-    "editor.selectionBackground": "#88c0d070",
-    "editor.selectionHighlightBackground": "#88c0d030",
-    "editor.rangeHighlightBackground": "#434c5e52",
-    "editor.wordHighlightBackground": "#88c0d030",
+		"editor.findRangeHighlightBackground": "#88c0d030",
+		"editor.lineHighlightBackground": "#48526652",
+		"editor.lineHighlightBorder": "#434c5e52",
+		"editor.inactiveSelectionBackground": "#434c5ecc",
+		"editor.selectionBackground": "#88c0d070",
+		"editor.selectionHighlightBackground": "#88c0d030",
+		"editor.rangeHighlightBackground": "#434c5e52",
+		"editor.wordHighlightBackground": "#88c0d030",
 		"editor.wordHighlightStrongBackground": "#88c0d030",
 
-		"editorError.foreground": "#DD5F65",
-    "editorError.border": "#DD5F6500",
-    "editorWarning.foreground": "#FAC480",
+		"editorError.foreground": "#FF6347",
+		"editorError.border": "#FF634700",
+		"editorWarning.foreground": "#ffd386",
 		"editorWarning.border": "#ebcb8b00",
-    "editorCursor.foreground": "#dddddd",
-    "editorIndentGuide.background": "#434c5eb3",
-    "editorLineNumber.foreground": "#dddddd66",
+		"editorCursor.foreground": "#dddddd",
+		"editorIndentGuide.background": "#434c5eb3",
+		"editorLineNumber.foreground": "#dddddd66",
 		"editorWhitespace.foreground": "#4c566ab3",
-		
+
 		"editorOverviewRuler.border": "#3b4252",
-    "editorOverviewRuler.currentContentForeground": "#3b4252",
-    "editorOverviewRuler.incomingContentForeground": "#3b4252",
-    "editorOverviewRuler.findMatchForeground": "#88c0d066",
-    "editorOverviewRuler.rangeHighlightForeground": "#88c0d066",
-    "editorOverviewRuler.selectionHighlightForeground": "#88c0d066",
-    "editorOverviewRuler.wordHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.currentContentForeground": "#3b4252",
+		"editorOverviewRuler.incomingContentForeground": "#3b4252",
+		"editorOverviewRuler.findMatchForeground": "#88c0d066",
+		"editorOverviewRuler.rangeHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.selectionHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.wordHighlightForeground": "#88c0d066",
 		"editorOverviewRuler.wordHighlightStrongForeground": "#88c0d066",
-    "editorOverviewRuler.modifiedForeground": "#FAC480",
-    "editorOverviewRuler.addedForeground": "#A3CE9E",
-    "editorOverviewRuler.deletedForeground": "#DD5F65",
-    "editorOverviewRuler.errorForeground": "#DD5F65",
+		"editorOverviewRuler.modifiedForeground": "#ffd386",
+		"editorOverviewRuler.addedForeground": "#A3CE9E",
+		"editorOverviewRuler.deletedForeground": "#FF6347",
+		"editorOverviewRuler.errorForeground": "#FF6347",
 		"editorOverviewRuler.warningForeground": "#ebcb8b",
 
-		"editorGutter.modifiedBackground": "#FAC480",
+		"editorGutter.modifiedBackground": "#ffd386",
 		"editorGutter.addedBackground": "#A3CE9E",
-		"editorGutter.deletedBackground": "#DD5F65",
-			
-		"-- DIFF EDITOR COLORS --": "For coloring inserted and removed text, use either a background or a border color but not both.",
-		"diffEditor.insertedTextBackground":"#A3CE9E40",
-		"diffEditor.removedTextBackground": "#DD5F6540",
+		"editorGutter.deletedBackground": "#FF6347",
 
-		"-- EDITOR WIDGET COLORS --": "The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.",
+		// DIFF EDITOR COLORS - "For coloring inserted and removed text, use either a background or a border color but not both.",
+		"diffEditor.insertedTextBackground": "#A3CE9E40",
+		"diffEditor.removedTextBackground": "#FF634740",
+
+		// EDITOR WIDGET COLORS - "The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.",
 		"editorWidget.background": "#23292e",
-		"editorSuggestWidget.background": "#ffffff20",
-		
-		"-- PEEK VIEW COLORS --": "Peek views are used to show references and declarations as a view inside the editor.",
+		"editorSuggestWidget.background": "#23292e",
+
+		// PEEK VIEW COLORS - "Peek views are used to show references and declarations as a view inside the editor.",
 		"peekViewResult.background": "#394049",
 		"peekViewTitle.background": "#23292e",
 
-		"-- MERGE CONFLICTS --": "Merge conflict decorations are shown when the editor contains special diff ranges.",
-		"merge.currentHeaderBackground": "#FAC48070",
-		"merge.currentContentBackground": "#FAC48040",
+		// MERGE CONFLICTS - "Merge conflict decorations are shown when the editor contains special diff ranges.",
+		"merge.currentHeaderBackground": "#ffd38670",
+		"merge.currentContentBackground": "#ffd38640",
 		"merge.incomingHeaderBackground": "#A3CE9E70",
 		"merge.incomingContentBackground": "#A3CE9E40",
 
-		"-- PANEL COLORS --": "Panels are shown below the editor area and contain views like Output and Integrated Terminal.",
+		// PANEL COLORS - "Panels are shown below the editor area and contain views like Output and Integrated Terminal.",
 		"panel.background": "#1d1e22",
 		"panelTitle.activeBorder": "#6699cc",
 
-		"-- STATUS BAR COLORS --": "The Status Bar is shown in the bottom of the workbench.",
+		// STATUS BAR COLORS - "The Status Bar is shown in the bottom of the workbench.",
 		"statusBar.background": "#1d1e22",
-    "statusBar.debuggingBackground": "#6699cc",
-    "statusBar.debuggingForeground": "#dddddd",
-    "statusBar.noFolderForeground": "#dddddd",
-    "statusBar.noFolderBackground": "#3b4252",
-    "statusBar.foreground": "#dddddd",
-    "statusBarItem.activeBackground": "#4c566a",
-    "statusBarItem.hoverBackground": "#434c5e",
-    "statusBarItem.prominentBackground": "#3b4252",
-    "statusBarItem.prominentHoverBackground": "#434c5e",
+		"statusBar.debuggingBackground": "#6699cc",
+		"statusBar.debuggingForeground": "#dddddd",
+		"statusBar.noFolderForeground": "#dddddd",
+		"statusBar.noFolderBackground": "#3b4252",
+		"statusBar.foreground": "#dddddd",
+		"statusBarItem.activeBackground": "#4c566a",
+		"statusBarItem.hoverBackground": "#434c5e",
+		"statusBarItem.prominentBackground": "#3b4252",
+		"statusBarItem.prominentHoverBackground": "#434c5e",
 		"statusBar.border": "#ffffff10",
 
-		"-- TITLE BAR COLORS --": "Note: These colors are currently only supported on macOS.",
+		// TITLE BAR COLORS - "Note: These colors are currently only supported on macOS.",
 		"titleBar.activeBackground": "#23292e",
-    "titleBar.activeForeground": "#dddddd",
-    "titleBar.border": "#2e344000",
-    "titleBar.inactiveBackground": "#23292e",
+		"titleBar.activeForeground": "#dddddd",
+		"titleBar.border": "#2e344000",
+		"titleBar.inactiveBackground": "#23292e",
 		"titleBar.inactiveForeground": "#dddddd66",
 
-		"-- NOTIFICATION COLORS --": "",
+		// NOTIFICATION COLORS - "",
 		"notificationCenterHeader.foreground": "#DDDDDD",
 		"notificationCenterHeader.background": "#23292e",
 
-		"-- QUICK PICKER --": "",
-		"pickerGroup.border":"#6699cc",
-		"pickerGroup.foreground":"#6699cc"
+		// QUICK PICKER - "",
+		"pickerGroup.border": "#6699cc",
+		"pickerGroup.foreground": "#6699cc",
+
+		// GIT COLORS - "",
+		"gitDecoration.modifiedResourceForeground": "#ffd386",
+		"gitDecoration.deletedResourceForeground": "#FF6347",
+		"gitDecoration.untrackedResourceForeground": "#dddddd66",
+		"gitDecoration.conflictingResourceForeground": "#FF6347",
+		"gitDecoration.submoduleResourceForeground": "#dddddd66"
+
 
 	},
-	"tokenColors": [
-		{
-			"settings": {
-				"background": "#343D46",
-				"foreground": "#dddddd"
-			}
-		},
-		{
+	"tokenColors": [{
 			"name": "Comment",
 			"scope": [
 				"comment",
@@ -216,7 +219,7 @@
 			"name": "Number",
 			"scope": "constant.numeric",
 			"settings": {
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
@@ -224,7 +227,7 @@
 			"scope": "constant.language",
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -241,7 +244,7 @@
 			"name": "Member Variable",
 			"scope": "variable.member",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -316,7 +319,7 @@
 			"name": "Storage",
 			"scope": "storage",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -345,7 +348,7 @@
 			"name": "Entity name",
 			"scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
 			"settings": {
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
@@ -361,14 +364,14 @@
 			"scope": "variable.parameter",
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
 			"name": "Language variable",
 			"scope": "variable.language",
 			"settings": {
-				"foreground": "#DD5F65",
+				"foreground": "#FF6347",
 				"fontStyle": "italic"
 			}
 		},
@@ -377,7 +380,7 @@
 			"scope": "entity.name.tag",
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -432,7 +435,7 @@
 			"name": "Invalid",
 			"scope": "invalid",
 			"settings": {
-				"background": "#DD5F65",
+				"background": "#FF6347",
 				"foreground": "#f8f8f8"
 			}
 		},
@@ -469,14 +472,14 @@
 			"name": "markup headings",
 			"scope": "markup.heading punctuation.definition.heading",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
 			"name": "markup h1",
 			"scope": "markup.heading.1 punctuation.definition.heading",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -514,7 +517,7 @@
 			"name": "markup hr",
 			"scope": "punctuation.definition.thematic-break",
 			"settings": {
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
@@ -531,7 +534,7 @@
 				"markup.list punctuation.definition.list_item"
 			],
 			"settings": {
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
@@ -539,13 +542,6 @@
 			"scope": "markup.raw",
 			"settings": {
 				"background": "#4F5B6660"
-			}
-		},
-		{
-			"name": "markup code",
-			"scope": "markup.raw.inline",
-			"settings": {
-				"background": "#4F5B6680"
 			}
 		},
 		{
@@ -569,7 +565,7 @@
 			"name": "diff.deleted",
 			"scope": "markup.deleted",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
@@ -583,7 +579,7 @@
 			"name": "diff.changed",
 			"scope": "markup.changed",
 			"settings": {
-				"foreground": "#FAC480"
+				"foreground": "#ffd386"
 			}
 		},
 		{
@@ -596,13 +592,13 @@
 		{
 			"scope": "constant.numeric.line-number.match",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		},
 		{
 			"scope": "message.error",
 			"settings": {
-				"foreground": "#DD5F65"
+				"foreground": "#FF6347"
 			}
 		}
 	]
