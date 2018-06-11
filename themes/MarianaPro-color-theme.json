@@ -103,7 +103,8 @@
 		"editor.rangeHighlightBackground": "#434c5e52",
 		"editor.wordHighlightBackground": "#88c0d030",
 		"editor.wordHighlightStrongBackground": "#88c0d030",
-
+		
+		"editorUnnecessary.foreground": "#dddddd70",
 		"editorError.foreground": "#FF6347",
 		"editorError.border": "#FF634700",
 		"editorWarning.foreground": "#ffd386",
