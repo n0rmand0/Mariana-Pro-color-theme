@@ -244,7 +244,7 @@
 		},
 		{
 			"name": "Quotes",
-			"scope": [string.quoted.double.js","string.quoted.single.js"],
+			"scope": ["string.quoted.double.js","string.quoted.single.js"],
 			"settings": {
 				"foreground": "#5fb3b3"
 			}
