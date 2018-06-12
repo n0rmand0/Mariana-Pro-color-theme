@@ -122,15 +122,15 @@
 		"editorOverviewRuler.selectionHighlightForeground": "#88c0d066",
 		"editorOverviewRuler.wordHighlightForeground": "#88c0d066",
 		"editorOverviewRuler.wordHighlightStrongForeground": "#88c0d066",
-		"editorOverviewRuler.modifiedForeground": "#FAB763",
+		"editorOverviewRuler.modifiedForeground": "#ecce8c",
 		"editorOverviewRuler.addedForeground": "#A3CE9E",
 		"editorOverviewRuler.deletedForeground": "#EE6A6F",
 		"editorOverviewRuler.errorForeground": "#EE6A6F",
-		"editorOverviewRuler.warningForeground": "#ebcb8b",
+		"editorOverviewRuler.warningForeground": "#ecce8c",
 		"editorOverviewRuler.infoForeground": "#88c0d066",
 		"editorOverviewRuler.bracketMatchForeground": "#88c0d066",
 
-		"editorGutter.modifiedBackground": "#FAB763",
+		"editorGutter.modifiedBackground": "#ecce8c",
 		"editorGutter.addedBackground": "#A3CE9E",
 		"editorGutter.deletedBackground": "#EE6A6F",
 
@@ -210,7 +210,7 @@
 		"terminalCursor.foreground": "#dddddd",
 		
 		// GIT COLORS - "",
-		"gitDecoration.modifiedResourceForeground": "#FAB763",
+		"gitDecoration.modifiedResourceForeground": "#ecce8c",
 		"gitDecoration.deletedResourceForeground": "#EE6A6F",
 		"gitDecoration.untrackedResourceForeground": "#dddddd66",
 		"gitDecoration.conflictingResourceForeground": "#EE6A6F",
@@ -615,7 +615,7 @@
 			"name": "diff.changed",
 			"scope": "markup.changed",
 			"settings": {
-				"foreground": "#FAB763"
+				"foreground": "#ecce8c"
 			}
 		},
 		{
