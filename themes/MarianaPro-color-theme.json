@@ -237,7 +237,14 @@
 		},
 		{
 			"name": "Punctuation",
-			"scope": ["punctuation.definition","string.quoted.double.js","string.quoted.single.js"],
+			"scope": ["punctuation.definition"],
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Quotes",
+			"scope": [string.quoted.double.js","string.quoted.single.js"],
 			"settings": {
 				"foreground": "#5fb3b3"
 			}
