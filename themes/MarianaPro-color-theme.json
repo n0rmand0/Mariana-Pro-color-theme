@@ -1,352 +1,641 @@
-// import escapeHTML from "./escapeHTML";
-import $ from "jquery";
-import listQueries from './listQueries';
-import {getPhases, getSingleTag, getMultiTags} from "./getTags";
-
-// import React, { Component } from 'react';
-
-var retirementExpireDate = new Date((new Date).getFullYear(),(new Date).getMonth()-6,(new Date).getDate(),0,0,0,0);
-var introExpireDate = new Date((new Date).getFullYear(),(new Date).getMonth()-1,(new Date).getDate(),0,0,0,0);
-var roles = [];
-var SPisLoaded = false;
-
-
-// Loads the required SharePoint libraries in production.
-const dataAccess = ( callback )=> {
-  $(document).ready(function () {
-    if (process.env.NODE_ENV === "development"){
-      return
-    }
-    var scriptbase = "https://collab.pncint.net/sites/SS/PPMPortal/SitePages" + "/_layouts/15/";
-    $.getScript(scriptbase + "SP.Runtime.js", function () {
-        $.getScript(scriptbase + "SP.js", function () {
-            $.getScript(scriptbase + "SP.Taxonomy.js",   getAllRoles );
-        });
-      });
-  });
-}
-
-
-// This function queries a SP list with (currentPillar,currentSLC,currentPhase) and returns an enumerator that may be rendered with a callback function.
-////////////////////////////////////////////////////////////////
-
-// Check to see if SP is loaded before getting data
-const getData = (listID, currentPillar, currentSLC,currentPhase, callback) => {
-  if(SPisLoaded){
-    getDataForReal(listID, currentPillar, currentSLC, currentPhase, callback);
-  }
-  else {
-    setTimeout(function () {
-      getData(listID, currentPillar,currentSLC,currentPhase, callback);
-    }, 100);
-  }
-}
-
-
-// Get the data
-const getDataForReal = ( listID, currentPillar,currentSLC,currentPhase, callback ) => {
-
-
-  var listTitle = listQueries[listID].listTitle;
-  console.log('Retrieving', listTitle,"("+currentPillar+", "+currentSLC+", "+currentPhase+") ...");
-  //Get the current context
-  var context = new SP.ClientContext();
-
-  //Get references to Lists and Libraries
-  var docList = context.get_web().get_lists().getByTitle( listTitle );
-
-  //Create a new CAML query object
-  var docListCAML = new SP.CamlQuery();
-
-  //If there is a query string defined, then pass it to the CAML object. No string means return everything.
-  var docListQueryString = listQueries[listID].queryString(currentPillar,currentSLC,currentPhase);
-
-  if ( docListQueryString !== undefined) {
-    docListCAML.set_viewXml( docListQueryString );
-  }
-
-  //Apply CAML query to each list
-  
-  var docListResults = docList.getItems(docListCAML);
-
-  //Load all result objects to the context at one time. We do this in order to only make ONE call to SharePoint for the data
-  context.load(docListResults);
-
-  // Prepare Doc Sort data if item is from Content Library
-  if (listID === "doc"){
-    var docSortList = context.get_web().get_lists().getByTitle( listQueries.docSort.listTitle );
-    var docSortListCAML = new SP.CamlQuery();
-    var docSortListQueryString = listQueries.docSort.queryString(currentPillar,currentSLC,currentPhase);
-    if ( docSortListQueryString !== undefined) {
-      docSortListCAML.set_viewXml( docSortListQueryString );
-    }
-    var docSortListResults = docSortList.getItems(docSortListCAML);
-    context.load(docSortListResults);
-  }
-
-  // Go fetch the data!
-  context.executeQueryAsync( () => {
-    const docEnum = docListResults.getEnumerator();
-    if (listID === "doc") {
-      const docSortEnum = docSortListResults.getEnumerator();
-      callback(docEnum, docSortEnum, currentPhase)
-    }
-    // optional callback function...
-    else if (callback && typeof callback === 'function'){
-        callback(docEnum);
-    }
-  });
-
-}
-// end getData()
-
-
-// Check to see if SP is loaded before getting data
-const getList = (listID, callback) => {
-  if(SPisLoaded){
-    getListForReal(listID, callback);
-  }
-  else {
-    setTimeout(function () {
-      getList(listID, callback);
-    }, 100);
-  }
-}
-
-
-// Get the List
-const getListForReal = ( listTitle, callback ) => {
-  // const listTitle = listQueries[listID].listTitle;
-  console.log('Retrieving', listTitle);
-  //Get the current context
-  const context = new SP.ClientContext();
-
-  //Get references to Lists and Libraries
-  const docList = context.get_web().get_lists().getByTitle( listTitle );
-
-  //Create a new CAML query object
-  const docListCAML = new SP.CamlQuery();
-
-  //Apply CAML query to each list
-  const docListResults = docList.getItems(docListCAML);
-
-  //Call SharePoint for the data
-  context.load(docListResults);
-
-  // Go fetch the data!
-  context.executeQueryAsync( () => {
-    let listEnum = docListResults.getEnumerator();
-    renderList(listTitle, listEnum, callback);
-  });
-} // end getList
-
-function renderList( listTitle, listEnum, callback ){
-  let listIndex = [];
-
-  // basic list
-  if (listTitle === "FAQ" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-      let item = {
-          title: currentRecord.get_item("Title"),
-          contentCategory: this.props.listID,
-          overlayText: currentRecord.get_item("Content"),
-      };
-      listIndex.push(item);
-    }
-  }
-
-  
-  if(listTitle === "ContentLibrary"){
-    while (listEnum.moveNext()) {
-      let currentRecord = docEnum.get_current();
-      //Get fields
-      let item = {
-          id: currentRecord.get_item("ID")
-          , title: currentRecord.get_item("Title")
-          , contentCategory: getSingleTag(currentRecord.get_item("ContentCategory"))
-          , activityCategory: getSingleTag(currentRecord.get_item("ActivityCategory"))
-          , pillars: getMultiTags(currentRecord.get_item("Pillar"), "pillar")
-          , methodologies: getMultiTags(currentRecord.get_item("Methodology"), "method")
-          , phasesArray: getMultiTags(currentRecord.get_item("Phase"), "phase")
-          , responsible: getMultiTags(currentRecord.get_item("Responsible"), "role")
-          , accountable: getMultiTags(currentRecord.get_item("Accountable"), "role")
-          , requiredApprover: getMultiTags(currentRecord.get_item("RequiredApprover"), "role").filter(role=>role!=="NA")
-          , overlayText: currentRecord.get_item("OverlayText")
-          , path: currentRecord.get_item("FileRef")
-          , videoURL: (currentRecord.get_item("VideoURL") && currentRecord.get_item("VideoURL").get_url())
-          , additionalResourceURL: (currentRecord.get_item("AdditionalResourceURL") && currentRecord.get_item("AdditionalResourceURL").get_url())
-          , partnerInteractionURL: ( currentRecord.get_item("PartnerInteractionURL") && currentRecord.get_item("PartnerInteractionURL").get_url())
-          , hideDownloadButton: currentRecord.get_item("HideDownloadButton")
-      }
-      //get all phases from the array as a comma-delimited string
-      item.phases = getPhases(item);
-      //fill Activity Docs Collection
-      listIndex.push(item);
-    }
-  }
-
-  if (listTitle === "Announcements" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-      // console.log(this.props.listID, 'Current Record', currentRecord);
-
-      let item = {
-          title: currentRecord.get_item("Title"),
-          created: currentRecord.get_item("Created"),
-          contentCategory: this.props.listID,
-          overlayText: currentRecord.get_item("Body")
-      };
-      listIndex.push(item);
-    }
-  }
-
-  if (listTitle === "Upcoming Events" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-
-      let item = {
-        title: currentRecord.get_item("Title")
-        , contentCategory: this.props.listID
-        , overlayText: currentRecord.get_item("EventDescription")
-        , eventDate: currentRecord.get_item("EventDate")
-      };
-      listIndex.push(item);
-    }
-  }
- 
-  if (listTitle === "VideoLibrary" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-      // console.log(this.props.listID, 'Current Record', currentRecord.get_fieldValues() );
-          
-      let item = {
-          title: currentRecord.get_item("Title"),
-          contentCategory: this.props.listID,
-          overlayText: currentRecord.get_item("Content"),
-          callout: currentRecord.get_item("Callout"),
-          status: currentRecord.get_item("Status")
-      };
-      listIndex.push(item); 
-    }
-  }
-  
-  if (listTitle === "FeaturedVideoLibrary" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-      // console.log(this.props.listID, 'Current Record', currentRecord);
-      let item = {
-        title: currentRecord.get_item("Title")
-        , path: currentRecord.get_item("FileRef") + ".mp4"
-        , thumb: currentRecord.get_item("AlternateThumbnailUrl")
-        , videoId: currentRecord.get_item('UniqueId')
-      };
-      listIndex.push(item); 
-    //   data = 'https://collab.pncint.net/sites/SS/PPMPortal/_layouts/15/videoembedplayer.aspx'
-    //             + '?site=be4bd75cc06d455a8a2e805c8f5a2313&'
-    //             + 'web=16ba62a2d41241c9a49ae512f3c5df3c&'
-    //             + 'folder=' + item.videoId + '&'
-    //             + 'img=' + item.thumb.get_url() + '&'
-    //             + 'title=1'
-    // }
-    }
-  }
-  
-  if (listTitle === "Did You Know" ){
-    while (listEnum.moveNext()) {
-      let currentRecord = listEnum.get_current();
-      // console.log(this.props.listID, 'Current Record', currentRecord.get_fieldValues() );
-
-      let item = {
-          title: currentRecord.get_item("Title"),
-          contentCategory: this.props.listID,
-          overlayText: currentRecord.get_item("Content"),
-          callout: currentRecord.get_item("Callout"),
-          status: currentRecord.get_item("Status")
-      };
-      listIndex.push(item); 
-    }
-  }
-  
-
-
-  // optional callback function...
-  if (callback && typeof callback === 'function'){
-    callback(listIndex);    
-  }
-} // end renderList
-
-
-// getAllRoles function is the first function executed when a portal session starts or a user switches between Methodologies/Pillars.
-// The function runs a series of queries to associate Responsible and Accountable acronyms to their respective expanded labels.
-// It enables the hover functionality that allows a user to mouseover a Responsible/Accountable record and see the long description.
-// parseRoleDescriptors() is open to other modules so it can retrieve info from roles[]
-function getAllRoles(){
-    var context = SP.ClientContext.get_current();
-    var session = SP.Taxonomy.TaxonomySession.getTaxonomySession(context);
-    var termStore = session.getDefaultSiteCollectionTermStore();
-    var parentTermId = '3bdaa19f-cf7a-4545-8a27-8c84bf572b23'; //parent Term Id
-    var parentTerm = termStore.getTerm(parentTermId);
-    var terms = parentTerm.get_terms();  //load child Terms
-
-    context.load(terms);
-    context.executeQueryAsync(
-    function(){
-       //print child Terms
-       for(var i = 0; i < terms.get_count();i++){
-           var term = terms.getItemAtIndex(i);
-           //console.log(term.get_name());
-           getTermExpandedLabel(term,1033,pushItem,logError);
-       }
-
-       // SP is loaded.  safe to get data
-       SPisLoaded = true;
-    },
-    function(sender,args){
-      console.log(args.get_message());
-    });
-
-}
-
-
-function getTermExpandedLabel(term,lcid,success,failure)
 {
-    var context = SP.ClientContext.get_current();
-    var taxSession = SP.Taxonomy.TaxonomySession.getTaxonomySession(context);
-    var termExpandedLabel = taxSession.getTerm(term.get_id()).getAllLabels(lcid);
-    context.load(termExpandedLabel);
-    context.executeQueryAsync(function() {
-           success(term,termExpandedLabel);
-        },
-        failure);
+	"name": "Mariana (Pro)",
+	"type": "dark",
+	"colors": {
+		// COLOR REFERENCE: "https://code.visualstudio.com/docs/getstarted/theme-color-reference",
+
+		//  BASE COLORS 
+		"focusBorder": "#434c5ead",
+		"foreground": "#dddddd",
+		"selection.background": "#88c0d070",
+		"widget.shadow": "#00000020",
+
+		// TEXT COLORS - "Colors inside a text document, such as the welcome page.",
+		"textLink.activeForeground": "#6699cc",
+		"textLink.foreground": "#6699cc",
+		"textPreformat.foreground": "#6699cc",
+
+		// BUTTON CONTROL - "A set of colors for button widgets such as Open Folder button in the Explorer of a new window.",
+		"button.background": "#6699cc",
+		"button.foreground": "#ffffff",
+		"button.hoverBackground": "#6699cc70",
+
+		// DROPDOWN CONTROL - "A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.",
+		"dropdown.background": "#ffffff20",
+		"dropdown.listBackground": "#ffffff20",
+
+		// INPUT CONTROL - "Colors for input controls such as in the Search view or the Find/Replace dialog.",
+		"input.background": "#343D46",
+		"input.border": "#343D46",
+		"input.foreground": "#dddddd",
+		"input.placeholderForeground": "#dddddd70",
+
+		// SCROLL BAR CONTROL - "Colors for input controls such as in the Search view or the Find/Replace dialog.",
+		"scrollbar.shadow": "#00000000",
+
+		// BADGE - "Badges are small information labels, for example, search results count.",
+		"badge.foreground": "#FFFFFF",
+		"badge.background": "#c54b4f",
+
+		// PROGRESS BAR - "",
+		"progressBar.background": "#23292e",
+
+		// LIST AND TREES - "Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.",
+		"list.activeSelectionBackground": "#434c5ead",
+		"list.activeSelectionForeground": "#dddddd",
+		"list.inactiveSelectionBackground": "#434c5e4d",
+		"list.inactiveSelectionForeground": "#dddddd",
+		"list.hoverForeground": "#eceff4",
+		"list.focusForeground": "#dddddd",
+		"list.focusBackground": "#434c5ead",
+		"list.hoverBackground": "#434c5e4d",
+		"list.dropBackground": "#434c5ead",
+		"list.highlightForeground": "#fff",
+		"list.errorForeground": "#EE6A6F",
+		"list.warningForeground": "#FAB763",
+
+		// ACTIVITY BAR - "The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar.",
+		"activityBar.background": "#23292e",
+		"activityBar.dropBackground": "#3b4252",
+		"activityBar.foreground": "#dddddd",
+		"activityBarBadge.background": "#EE6A6F",
+		"activityBarBadge.foreground": "#fff",
+
+		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
+		"sideBar.background": "#23292e",
+		"sideBar.foreground": "#dddddd",
+		"sideBar.border": "#23292e",
+		"sideBarSectionHeader.background": "#1d1e22",
+		"sideBarSectionHeader.foreground": "#dddddd",
+		"sideBarTitle.foreground": "#dddddd",
+
+
+		// EDITOR GROUPS & TABS - "Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.",
+		"editorGroup.background": "#23292e",
+		"editorGroup.border": "#00000000",
+		"editorGroup.dropBackground": "#23292e",
+		"editorGroupHeader.noTabsBackground": "#23292e",
+		"editorGroupHeader.tabsBackground": "#23292e",
+		"editorGroupHeader.tabsBorder": "#394049",
+		"tab.activeBackground": "#394049",
+		"tab.activeForeground": "#dddddd",
+		"tab.border": "#00000000",
+		"tab.activeBorder": "#88c0d000",
+		"tab.unfocusedActiveBorder": "#88c0d000",
+		"tab.inactiveBackground": "#3940497c",
+		"tab.inactiveForeground": "#dddddd66",
+		"tab.unfocusedActiveForeground": "#dddddd99",
+		"tab.unfocusedInactiveForeground": "#dddddd66",
+
+		// EDITOR COLOR - "The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.",
+		"editor.background": "#343D46",
+		"editor.foreground": "#dddddd",
+
+		"editor.hoverHighlightBackground": "#B1D2FF15",
+		"editor.findMatchBackground": "#B1D2FF15",
+		"editor.findMatchHighlightBackground": "#B1D2FF15",
+		"editor.findRangeHighlightBackground": "#B1D2FF15",
+		"editor.lineHighlightBackground": "#B1D2FF06",
+		"editor.lineHighlightBorder": "#B1D2FF08",
+		"editor.inactiveSelectionBackground": "#434c5ecc",
+		"editor.selectionBackground": "#B1D2FF35",
+		"editor.selectionHighlightBackground": "#B1D2FF15",
+		"editor.rangeHighlightBackground": "#B1D2FF05",
+		"editor.wordHighlightBackground": "#B1D2FF15",
+		"editor.wordHighlightStrongBackground": "#B1D2FF15",
+
+		"editorUnnecessary.foreground": "#dddddd80",
+		"editorError.foreground": "#EE6A6F",
+		"editorError.border": "#EE6A6F00",
+		"editorWarning.foreground": "#FAB763",
+		"editorWarning.border": "#ebcb8b00",
+		"editorCursor.foreground": "#dddddd",
+		"editorIndentGuide.background": "#434c5eb3",
+		"editorLineNumber.foreground": "#dddddd66",
+		"editorWhitespace.foreground": "#4c566ab3",
+
+		"editorOverviewRuler.border": "#3b4252",
+		"editorOverviewRuler.currentContentForeground": "#3b4252",
+		"editorOverviewRuler.incomingContentForeground": "#3b4252",
+		"editorOverviewRuler.findMatchForeground": "#88c0d066",
+		"editorOverviewRuler.rangeHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.selectionHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.wordHighlightForeground": "#88c0d066",
+		"editorOverviewRuler.wordHighlightStrongForeground": "#88c0d066",
+		"editorOverviewRuler.modifiedForeground": "#FAB763",
+		"editorOverviewRuler.addedForeground": "#A3CE9E",
+		"editorOverviewRuler.deletedForeground": "#EE6A6F",
+		"editorOverviewRuler.errorForeground": "#EE6A6F",
+		"editorOverviewRuler.warningForeground": "#ebcb8b",
+		"editorOverviewRuler.infoForeground": "#88c0d066",
+		"editorOverviewRuler.bracketMatchForeground": "#88c0d066",
+
+		"editorGutter.modifiedBackground": "#FAB763",
+		"editorGutter.addedBackground": "#A3CE9E",
+		"editorGutter.deletedBackground": "#EE6A6F",
+
+		// DIFF EDITOR COLORS - "For coloring inserted and removed text, use either a background or a border color but not both.",
+		"diffEditor.insertedTextBackground": "#A3CE9E40",
+		"diffEditor.removedTextBackground": "#EE6A6F40",
+
+		// EDITOR WIDGET COLORS - "The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.",
+		"editorWidget.background": "#23292e",
+		"editorSuggestWidget.background": "#23292e",
+
+		// PEEK VIEW COLORS - "Peek views are used to show references and declarations as a view inside the editor.",
+		"peekViewResult.background": "#394049",
+		"peekViewTitle.background": "#23292e",
+
+		// MERGE CONFLICTS - "Merge conflict decorations are shown when the editor contains special diff ranges.",
+		"merge.currentHeaderBackground": "#FAB76370",
+		"merge.currentContentBackground": "#FAB76340",
+		"merge.incomingHeaderBackground": "#A3CE9E70",
+		"merge.incomingContentBackground": "#A3CE9E40",
+
+		// PANEL COLORS - "Panels are shown below the editor area and contain views like Output and Integrated Terminal.",
+		"panel.background": "#1d1e22",
+		"panelTitle.activeBorder": "#6699cc",
+
+		// STATUS BAR COLORS - "The Status Bar is shown in the bottom of the workbench.",
+		"statusBar.background": "#1d1e22",
+		"statusBar.debuggingBackground": "#6699cc",
+		"statusBar.debuggingForeground": "#dddddd",
+		"statusBar.noFolderForeground": "#dddddd",
+		"statusBar.noFolderBackground": "#3b4252",
+		"statusBar.foreground": "#dddddd",
+		"statusBarItem.activeBackground": "#4c566a",
+		"statusBarItem.hoverBackground": "#434c5e",
+		"statusBarItem.prominentBackground": "#3b4252",
+		"statusBarItem.prominentHoverBackground": "#434c5e",
+		"statusBar.border": "#ffffff10",
+
+		// TITLE BAR COLORS - "Note: These colors are currently only supported on macOS.",
+		"titleBar.activeBackground": "#23292e",
+		"titleBar.activeForeground": "#dddddd",
+		"titleBar.border": "#2e344000",
+		"titleBar.inactiveBackground": "#23292e",
+		"titleBar.inactiveForeground": "#dddddd66",
+
+		// NOTIFICATION COLORS - "",
+		"notificationCenterHeader.foreground": "#DDDDDD",
+		"notificationCenterHeader.background": "#23292e",
+
+		// EXTENSIONS
+		"extensionButton.prominentForeground": "#ffffff",
+    "extensionButton.prominentBackground": "#6699cc",
+		"extensionButton.prominentHoverBackground": "#6699cc70",
+		
+		// QUICK PICKER - "",
+		"pickerGroup.border": "#6699cc",
+		"pickerGroup.foreground": "#6699cc",
+
+		// INTEGRATED TERMINAL COLORS
+		"terminal.ansiBrightBlack": "#000",
+		"terminal.ansiBlack": "#000",
+		"terminal.ansiBlue": "#6699cc",
+		"terminal.ansiBrightBlue": "#6699cc",
+		"terminal.ansiBrightCyan": "#6699cc",
+		"terminal.ansiCyan": "#6699cc",
+		"terminal.ansiBrightMagenta": "#c594c5",
+		"terminal.ansiMagenta": "#c594c5",
+		"terminal.ansiBrightRed": "#EE6A6F",
+		"terminal.ansiRed": "#EE6A6F",
+		"terminal.ansiYellow": "#FAB763",
+		"terminal.ansiBrightYellow": "#FAB763",
+		"terminal.ansiBrightGreen": "#A3CE9E",
+		"terminal.ansiGreen": "#A3CE9E",
+		"terminal.ansiWhite": "#dddddd",
+		"terminal.selectionBackground": "#dddddd30",
+		"terminalCursor.background": "#dddddd30",
+		"terminalCursor.foreground": "#dddddd",
+		
+		// GIT COLORS - "",
+		"gitDecoration.modifiedResourceForeground": "#FAB763",
+		"gitDecoration.deletedResourceForeground": "#EE6A6F",
+		"gitDecoration.untrackedResourceForeground": "#dddddd66",
+		"gitDecoration.conflictingResourceForeground": "#EE6A6F",
+		"gitDecoration.submoduleResourceForeground": "#dddddd66"
+
+
+	},
+	"tokenColors": [{
+			"name": "Comment",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"foreground": "#dddddd80",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "String",
+			"scope": "string",
+			"settings": {
+				"foreground": "#A3CE9E"
+			}
+		},
+		{
+			"name": "Punctuation",
+			"scope": ["punctuation.definition"],
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Quotes",
+			"scope": ["string.quoted.double.js","string.quoted.single.js"],
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Number",
+			"scope": "constant.numeric",
+			"settings": {
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "Built-in constant",
+			"scope": "constant.language",
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "User-defined constant",
+			"scope": [
+				"constant.character",
+				"constant.other"
+			],
+			"settings": {
+				"foreground": "#c594c5"
+			}
+		},
+		{
+			"name": "Member Variable",
+			"scope": "variable.member",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "Keyword",
+			"scope": [
+				"keyword - keyword.operator",
+				"keyword.operator.word",
+				"keyword.control",
+				"keyword.operator.new.js"
+			],
+			"settings": {
+				"foreground": "#c594c5"
+			}
+		},
+		{
+			"name": "Embedded Line Template Line JS",
+			"scope": "string.template.js meta.template.expression.js meta.embedded.line.js",
+			"settings": {
+				"foreground": "#dddddd"
+			}
+		},
+		{
+			"name": "Operators",
+			"scope": "keyword.operator",
+			"settings": {
+				"foreground": "#FA8763"
+			}
+		},
+		{
+			"name": "Punctuation",
+			"scope": [
+				"punctuation.separator",
+				"punctuation.terminator"
+			],
+			"settings": {
+				"foreground": "#A7ADBA"
+			}
+		},
+		{
+			"name": "Punctuation",
+			"scope": "punctuation.section",
+			"settings": {
+				"foreground": "#ffffff"
+			}
+		},
+		{
+			"name": "Accessor",
+			"scope": "punctuation.accessor",
+			"settings": {
+				"foreground": "#A7ADBA"
+			}
+		},
+		{
+			"name": "Annotation Punctuation",
+			"scope": "punctuation.definition.annotation",
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "JavaScript Dollar",
+			"scope": [
+				"variable.other.dollar.only.js",
+				"variable.other.object.dollar.only.js",
+				"variable.type.dollar.only.js",
+				"support.class.dollar.only.js"
+			],
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Storage",
+			"scope": "storage",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "Storage type",
+			"scope": "storage.type",
+			"settings": {
+				"foreground": "#c594c5",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Entity name",
+			"scope": "entity.name.function",
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Object Property JS",
+			"scope": "meta.object-literal.key.js",
+			"settings": {
+				"foreground": "#6699cc"
+			}
+		},
+		{
+			"name": "Entity name",
+			"scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
+			"settings": {
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "Inherited class",
+			"scope": "entity.other.inherited-class",
+			"settings": {
+				"fontStyle": "italic underline",
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "Function argument",
+			"scope": "variable.parameter",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "Language variable",
+			"scope": "variable.language",
+			"settings": {
+				"foreground": "#EE6A6F",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Tag name",
+			"scope": "entity.name.tag",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "Tag attribute",
+			"scope": "entity.other.attribute-name",
+			"settings": {
+				"foreground": "#c594c5"
+			}
+		},
+		{
+			"name": "Function call",
+			"scope": [
+				"variable.function",
+				"variable.annotation"
+			],
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#6699cc"
+			}
+		},
+		{
+			"name": "Library function",
+			"scope": [
+				"support.function",
+				"support.macro"
+			],
+			"settings": {
+				"foreground": "#6699cc",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Library constant",
+			"scope": "support.constant",
+			"settings": {
+				"foreground": "#c594c5",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Library class/type",
+			"scope": [
+				"support.type",
+				"support.class"
+			],
+			"settings": {
+				"foreground": "#6699cc",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Invalid",
+			"scope": "invalid",
+			"settings": {
+				"background": "#EE6A6F",
+				"foreground": "#aaaaaa"
+			}
+		},
+		{
+			"name": "Invalid deprecated",
+			"scope": "invalid.deprecated",
+			"settings": {
+				"background": "#f97b58",
+				"foreground": "#f8f8f8"
+			}
+		},
+		{
+			"name": "YAML Key",
+			"scope": "entity.name.tag.yaml",
+			"settings": {
+				"foreground": "#5fb3b3"
+			}
+		},
+		{
+			"name": "YAML String",
+			"scope": "source.yaml string.unquoted",
+			"settings": {
+				"foreground": "#dddddd"
+			}
+		},
+		{
+			"name": "markup headings",
+			"scope": "markup.heading",
+			"settings": {
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "markup headings",
+			"scope": "markup.heading punctuation.definition.heading",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "markup h1",
+			"scope": "markup.heading.1 punctuation.definition.heading",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "markup links",
+			"scope": [
+				"string.other.link",
+				"markup.underline.link"
+			],
+			"settings": {
+				"foreground": "#6699cc"
+			}
+		},
+		{
+			"name": "markup bold",
+			"scope": "markup.bold",
+			"settings": {
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "markup italic",
+			"scope": "markup.italic",
+			"settings": {
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "markup bold/italic",
+			"scope": "markup.italic markup.bold | markup.bold markup.italic",
+			"settings": {
+				"fontStyle": "bold italic"
+			}
+		},
+		{
+			"name": "markup hr",
+			"scope": "punctuation.definition.thematic-break",
+			"settings": {
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "markup numbered list bullet",
+			"scope": "markup.list.numbered.bullet",
+			"settings": {
+				"foreground": "#A3CE9E"
+			}
+		},
+		{
+			"name": "markup blockquote",
+			"scope": [
+				"markup.quote punctuation.definition.blockquote",
+				"markup.list punctuation.definition.list_item"
+			],
+			"settings": {
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "markup code",
+			"scope": "markup.raw",
+			"settings": {
+				"background": "#4F5B6660"
+			}
+		},
+		{
+			"name": "markup punctuation",
+			"scope": "(text punctuation.definition.italic | text punctuation.definition.bold)",
+			"settings": {
+				"foreground": "#c594c5"
+			}
+		},
+		{
+			"name": "diff.header",
+			"scope": [
+				"meta.diff",
+				"meta.diff.header"
+			],
+			"settings": {
+				"foreground": "#c594c5"
+			}
+		},
+		{
+			"name": "diff.deleted",
+			"scope": "markup.deleted",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"name": "diff.inserted",
+			"scope": "markup.inserted",
+			"settings": {
+				"foreground": "#99c794"
+			}
+		},
+		{
+			"name": "diff.changed",
+			"scope": "markup.changed",
+			"settings": {
+				"foreground": "#FAB763"
+			}
+		},
+		{
+			"name": "CSS Properties",
+			"scope": "support.type.property-name",
+			"settings": {
+				"foreground": "#dddddd"
+			}
+		},
+		{
+			"scope": "constant.numeric.line-number.match",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		},
+		{
+			"scope": "message.error",
+			"settings": {
+				"foreground": "#EE6A6F"
+			}
+		}
+	]
 }
-
-function pushItem(term,termExpandedLabel)
-{
-    var item = {
-          termLabel: term.get_name()
-        , termSynonym: (function () { try { termExpandedLabel.getItemAtIndex(1).get_value(); return termExpandedLabel.getItemAtIndex(1).get_value(); } catch(error) { return "N/A" }})()
-    }
-
-    roles.push(item);
-}
-
-function parseRoleDescriptors(role) {
-    var roleSynonym = roles.filter(function(obj){
-      return (obj.termLabel === role)
-  });
-  if (roleSynonym[0]){
-    return roleSynonym[0].termSynonym
-  }
-}
-
-
-function logError(sender,args){
-    console.log(args.get_message());
-}
-
-
-
-
-
-export {dataAccess, getData, getAllRoles, getList, parseRoleDescriptors };
