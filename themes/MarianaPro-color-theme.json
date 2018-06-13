@@ -190,8 +190,8 @@
 		"pickerGroup.foreground": "#6699cc",
 
 		// INTEGRATED TERMINAL COLORS
-		"terminal.ansiBrightBlack": "#000",
-		"terminal.ansiBlack": "#000",
+		"terminal.ansiBrightBlack": "#ffffff80",
+		"terminal.ansiBlack": "#ffffff80",
 		"terminal.ansiBlue": "#6699cc",
 		"terminal.ansiBrightBlue": "#6699cc",
 		"terminal.ansiBrightCyan": "#6699cc",
@@ -239,13 +239,6 @@
 		{
 			"name": "Punctuation",
 			"scope": ["punctuation.definition"],
-			"settings": {
-				"foreground": "#5fb3b3"
-			}
-		},
-		{
-			"name": "Quotes",
-			"scope": ["string.quoted.double.js","string.quoted.single.js"],
 			"settings": {
 				"foreground": "#5fb3b3"
 			}
