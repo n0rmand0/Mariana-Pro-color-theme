@@ -2,7 +2,7 @@
     "name": "mariana-pro",
     "displayName": "Mariana Pro",
     "description": "A complete color theme for VS Code based on Sublime Text's Mariana Syntax and Adaptive UI",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "rickynormandeau",
     "repository": "https://github.com/n0rmand0/Mariana-Pro-color-theme",
     "engines": {

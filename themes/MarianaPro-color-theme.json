@@ -35,7 +35,7 @@
 
 		// BADGE - "Badges are small information labels, for example, search results count.",
 		"badge.foreground": "#FFFFFF",
-		"badge.background": "#c54b4f",
+		"badge.background": "#EE6A6Fdd",
 
 		// PROGRESS BAR - "",
 		"progressBar.background": "#23292e",
@@ -58,7 +58,7 @@
 		"activityBar.background": "#23292e",
 		"activityBar.dropBackground": "#3b4252",
 		"activityBar.foreground": "#dddddd",
-		"activityBarBadge.background": "#EE6A6F",
+		"activityBarBadge.background": "#ee6a6edd",
 		"activityBarBadge.foreground": "#fff",
 
 		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
@@ -471,7 +471,6 @@
 			"name": "Invalid",
 			"scope": "invalid",
 			"settings": {
-				"background": "#EE6A6F",
 				"foreground": "#aaaaaa"
 			}
 		},
@@ -479,7 +478,6 @@
 			"name": "Invalid deprecated",
 			"scope": "invalid.deprecated",
 			"settings": {
-				"background": "#f97b58",
 				"foreground": "#f8f8f8"
 			}
 		},
@@ -571,13 +569,6 @@
 			],
 			"settings": {
 				"foreground": "#FAB763"
-			}
-		},
-		{
-			"name": "markup code",
-			"scope": "markup.raw",
-			"settings": {
-				"background": "#4F5B6660"
 			}
 		},
 		{
