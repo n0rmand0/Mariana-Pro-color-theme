@@ -35,7 +35,7 @@
 
 		// BADGE - "Badges are small information labels, for example, search results count.",
 		"badge.foreground": "#FFFFFF",
-		"badge.background": "#EE6A6Fdd",
+		"badge.background": "#EE6A6Fcc",
 
 		// PROGRESS BAR - "",
 		"progressBar.background": "#23292e",
@@ -58,7 +58,7 @@
 		"activityBar.background": "#23292e",
 		"activityBar.dropBackground": "#3b4252",
 		"activityBar.foreground": "#dddddd",
-		"activityBarBadge.background": "#ee6a6edd",
+		"activityBarBadge.background": "#EE6A6Fcc",
 		"activityBarBadge.foreground": "#fff",
 
 		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
