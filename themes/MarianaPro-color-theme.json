@@ -58,13 +58,14 @@
 		"activityBar.background": "#23292e",
 		"activityBar.dropBackground": "#3b4252",
 		"activityBar.foreground": "#dddddd",
+		"activityBar.border": "#00000030",
 		"activityBarBadge.background": "#EE6A6Fcc",
 		"activityBarBadge.foreground": "#fff",
 
 		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
 		"sideBar.background": "#23292e",
 		"sideBar.foreground": "#dddddd",
-		"sideBar.border": "#23292e",
+		"sideBar.border": "#00000030",
 		"sideBarSectionHeader.background": "#1d1e22",
 		"sideBarSectionHeader.foreground": "#dddddd",
 		"sideBarTitle.foreground": "#dddddd",
@@ -72,14 +73,14 @@
 
 		// EDITOR GROUPS & TABS - "Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.",
 		"editorGroup.background": "#23292e",
-		"editorGroup.border": "#343D46",
+		"editorGroup.border": "#00000030",
 		"editorGroup.dropBackground": "#23292e",
 		"editorGroupHeader.noTabsBackground": "#23292e",
 		"editorGroupHeader.tabsBackground": "#23292e",
-		"editorGroupHeader.tabsBorder": "#343D46",
+		"editorGroupHeader.tabsBorder": "#00000030",
 		"tab.activeBackground": "#343D46",
 		"tab.activeForeground": "#dddddd",
-		"tab.border": "#00000000",
+		"tab.border": "#00000030",
 		"tab.activeBorder": "#343D46",
 		"tab.unfocusedActiveBorder": "#343D46",
 		"tab.inactiveBackground": "#3940497c",
@@ -90,7 +91,7 @@
 		// EDITOR COLOR - "The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.",
 		"editor.background": "#343D46",
 		"editor.foreground": "#dddddd",
-
+		
 		"editor.hoverHighlightBackground": "#B1D2FF15",
 		"editor.findMatchBackground": "#B1D2FF15",
 		"editor.findMatchHighlightBackground": "#B1D2FF15",
@@ -154,6 +155,7 @@
 
 		// PANEL COLORS - "Panels are shown below the editor area and contain views like Output and Integrated Terminal.",
 		"panel.background": "#1d1e22",
+		"panel.border": "#00000030",
 		"panelTitle.activeBorder": "#6699cc",
 
 		// STATUS BAR COLORS - "The Status Bar is shown in the bottom of the workbench.",
@@ -172,7 +174,7 @@
 		// TITLE BAR COLORS - "Note: These colors are currently only supported on macOS.",
 		"titleBar.activeBackground": "#23292e",
 		"titleBar.activeForeground": "#dddddd",
-		"titleBar.border": "#2e344000",
+		"titleBar.border": "#00000030",
 		"titleBar.inactiveBackground": "#23292e",
 		"titleBar.inactiveForeground": "#dddddd66",
 
