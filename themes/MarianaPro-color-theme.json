@@ -141,6 +141,7 @@
 
 		// EDITOR WIDGET COLORS - "The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.",
 		"editorWidget.background": "#23292e",
+		"editorWidget.border": "#000",
 		"editorSuggestWidget.background": "#23292e",
 
 		// PEEK VIEW COLORS - "Peek views are used to show references and declarations as a view inside the editor.",
