@@ -11,13 +11,14 @@
     "categories": [
         "Themes"
     ],
-    "tags":[
+    "keywords":[
         "Sublime Text", 
         "Mariana",
         "Adaptive UI",
         "Color Theme",
         "Theme"
     ],
+    "icon": "icon.png",
     "contributes": {
         "themes": [
             {
