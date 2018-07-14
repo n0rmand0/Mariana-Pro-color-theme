@@ -5,7 +5,7 @@
 		// COLOR REFERENCE: "https://code.visualstudio.com/docs/getstarted/theme-color-reference",
 
 		//  BASE COLORS 
-		"focusBorder": "#434c5ead",
+		"focusBorder": "#00000040",
 		"foreground": "#dddddd",
 		"selection.background": "#88c0d070",
 		"widget.shadow": "#00000020",
@@ -58,14 +58,14 @@
 		"activityBar.background": "#23292e",
 		"activityBar.dropBackground": "#3b4252",
 		"activityBar.foreground": "#dddddd",
-		"activityBar.border": "#00000030",
+		// "activityBar.border": "#00000030",
 		"activityBarBadge.background": "#EE6A6Fcc",
 		"activityBarBadge.foreground": "#fff",
 
 		// SIDE BAR - "The Side Bar contains views like the Explorer and Search.",
 		"sideBar.background": "#23292e",
 		"sideBar.foreground": "#dddddd",
-		"sideBar.border": "#00000030",
+		// "sideBar.border": "#00000030",
 		"sideBarSectionHeader.background": "#1d1e22",
 		"sideBarSectionHeader.foreground": "#dddddd",
 		"sideBarTitle.foreground": "#dddddd",
@@ -77,10 +77,10 @@
 		"editorGroup.dropBackground": "#23292e",
 		"editorGroupHeader.noTabsBackground": "#23292e",
 		"editorGroupHeader.tabsBackground": "#23292e",
-		"editorGroupHeader.tabsBorder": "#00000030",
+		// "editorGroupHeader.tabsBorder": "#00000030",
 		"tab.activeBackground": "#343D46",
 		"tab.activeForeground": "#dddddd",
-		"tab.border": "#00000030",
+		"tab.border": "#ffffff15",
 		"tab.activeBorder": "#343D46",
 		"tab.unfocusedActiveBorder": "#343D46",
 		"tab.inactiveBackground": "#3940497c",
@@ -175,7 +175,7 @@
 		// TITLE BAR COLORS - "Note: These colors are currently only supported on macOS.",
 		"titleBar.activeBackground": "#23292e",
 		"titleBar.activeForeground": "#dddddd",
-		"titleBar.border": "#00000030",
+		// "titleBar.border": "#00000030",
 		"titleBar.inactiveBackground": "#23292e",
 		"titleBar.inactiveForeground": "#dddddd66",
 
@@ -228,8 +228,7 @@
 				"punctuation.definition.comment"
 			],
 			"settings": {
-				"foreground": "#dddddd80",
-				"fontStyle": "italic"
+				"foreground": "#dddddd80"
 			}
 		},
 		{
@@ -358,8 +357,8 @@
 			"name": "Storage type",
 			"scope": "storage.type",
 			"settings": {
-				"foreground": "#c594c5",
-				"fontStyle": "italic"
+				"fontStyle": "italic",
+				"foreground": "#c594c5"
 			}
 		},
 		{
@@ -403,8 +402,8 @@
 			"name": "Language variable",
 			"scope": "variable.language",
 			"settings": {
-				"foreground": "#EE6A6F",
-				"fontStyle": "italic"
+				"fontStyle": "italic",
+				"foreground": "#EE6A6F"
 			}
 		},
 		{
@@ -440,16 +439,16 @@
 				"support.macro"
 			],
 			"settings": {
-				"foreground": "#6699cc",
-				"fontStyle": "italic"
+				"fontStyle": "italic",
+				"foreground": "#6699cc"
 			}
 		},
 		{
 			"name": "Library constant",
 			"scope": "support.constant",
 			"settings": {
-				"foreground": "#c594c5",
-				"fontStyle": "italic"
+				"fontStyle": "italic",
+				"foreground": "#c594c5"
 			}
 		},
 		{
@@ -459,8 +458,8 @@
 				"support.class"
 			],
 			"settings": {
-				"foreground": "#6699cc",
-				"fontStyle": "italic"
+				// "fontStyle": "italic",
+				"foreground": "#6699cc"
 			}
 		},
 		{
@@ -609,6 +608,7 @@
 			"name": "CSS Properties",
 			"scope": "support.type.property-name",
 			"settings": {
+				"fontStyle": "",
 				"foreground": "#dddddd"
 			}
 		},
