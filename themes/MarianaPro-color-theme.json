@@ -21,8 +21,8 @@
 		"button.hoverBackground": "#6699cc70",
 
 		// DROPDOWN CONTROL - A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.
-		"dropdown.background": "#ffffff20",
-		"dropdown.listBackground": "#ffffff20",
+		"dropdown.background": "#23292e",
+		"dropdown.listBackground": "#23292e",
 
 		// INPUT CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
 		"input.background": "#343D46",
