@@ -10,3 +10,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Fix dropdown opacity
 - Add scroll shadow to support breadcrumbs
 - Update screenshot
+-
+
+## 2.2.0
+- Add color for editor.info
+- Update ReadMe
