@@ -1,7 +1,7 @@
 # Mariana Pro
 ### A complete syntax theme for VS Code based on Sublime Text's Mariana and Adaptive UI
 
-This theme comes in 3 varieties— cool, gray, and warm.
+## This theme comes in 3 varieties: cool, gray, and warm.
 
 ### Mariana Pro (Cool)
 ![Mariana Pro JS Screenshot](https://raw.githubusercontent.com/n0rmand0/Mariana-Pro-color-theme/master/screenshot.png)
