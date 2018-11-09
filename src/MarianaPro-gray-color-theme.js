@@ -9,20 +9,20 @@ baseHL1="#d0f4ff12";
 baseHL2="#d0f4ff08";
 
 // //warm
-// base0="#3d3734"
-// base1= "#2b2624";
-// base2="#221e1d";
-// baseHL0="#ffe4d440";
-// baseHL1="#ffe4d412";
-// baseHL2="#ffe4d408";
+base0="#3d3734"
+base1= "#2b2624";
+base2="#221e1d";
+baseHL0="#ffe4d440";
+baseHL1="#ffe4d412";
+baseHL2="#ffe4d408";
 
 // //gray
-// base0="#3d3d3d"
-// base1= "#2b2b2b";
-// base2="#222222";
-// baseHL0="#f4f4f440";
-// baseHL1="#f4f4f412";
-// baseHL2="#f4f4f408";
+base0="#3d3d3d"
+base1= "#2b2b2b";
+base2="#222222";
+baseHL0="#f4f4f440";
+baseHL1="#f4f4f412";
+baseHL2="#f4f4f408";
 
 shadow0 = "#00000070"
 shadow1 = "#00000040";
@@ -57,7 +57,7 @@ purple0= "#c594c5";
 
 // exportable json via `gulp`
 module.exports = {
-    "name": "Mariana Pro",
+    "name": "Mariana (Pro)",
     "type": "dark",
     "colors": {
       // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
