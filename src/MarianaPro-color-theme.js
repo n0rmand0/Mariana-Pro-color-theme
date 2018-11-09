@@ -1,12 +1,11 @@
 // set variables for easy color management
-  base="#343D46"
+  base0="#343D46"
+  base1= "#23292e";
+  base2="#1d1e22";
 
-  baseHL0="#c6e8ff40";
-  baseHL1="#c6e8ff20";
-  baseHL2="#c6e8ff10";
-
-  baseSH0= "#23292e";
-  baseSH1="#1d1e22";
+  base0HL0="#c6e8ff40";
+  base0HL1="#c6e8ff20";
+  base0HL2="#c6e8ff10";
 
   shadow = "#00000070"
   shadow2 = "#00000040";
@@ -48,7 +47,7 @@ module.exports = {
     "colors": {
       // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
   
-      //  BASE COLORS
+      //  BASE0 COLORS
       "focusBorder":shadow2,
       "foreground": highlight0,
       "selection.background": highlight2,
@@ -65,12 +64,12 @@ module.exports = {
       "button.hoverBackground": blue1,
   
       // DROPDOWN CONTROL - A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.
-      "dropdown.background": baseSH0,
-      "dropdown.listBackground": baseSH0,
+      "dropdown.background": base1,
+      "dropdown.listBackground": base1,
   
       // INPUT CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
-      "input.background": base,
-      "input.border": base,
+      "input.background": base0,
+      "input.border": base0,
       "input.foreground": highlight0,
       "input.placeholderForeground": highlight1,
   
@@ -85,70 +84,70 @@ module.exports = {
       "badge.background": red1,
   
       // PROGRESS BAR
-      "progressBar.background": baseSH0,
+      "progressBar.background": base1,
   
       // LIST AND TREES - Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
-      "list.activeSelectionBackground": baseHL1,
+      "list.activeSelectionBackground": base0HL1,
       "list.activeSelectionForeground": highlight0,
-      "list.inactiveSelectionBackground": baseHL2,
+      "list.inactiveSelectionBackground": base0HL2,
       "list.inactiveSelectionForeground": highlight0,
       "list.hoverForeground": highlight0,
       "list.focusForeground": highlight0,
-      "list.focusBackground": baseHL1,
-      "list.hoverBackground": baseHL2,
-      "list.dropBackground": baseHL1,
+      "list.focusBackground": base0HL1,
+      "list.hoverBackground": base0HL2,
+      "list.dropBackground": base0HL1,
       "list.highlightForeground": white0,
       "list.errorForeground": red0,
       "list.warningForeground": yellow0,
   
       // ACTIVITY BAR - The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar
-      "activityBar.background": baseSH0,
-      "activityBar.dropBackground": base,
+      "activityBar.background": base1,
+      "activityBar.dropBackground": base0,
       "activityBar.foreground": highlight0,
       // "activityBar.border":shadow2,
       "activityBarBadge.background": red1,
       "activityBarBadge.foreground": white0,
   
       // SIDE BAR - The Side Bar contains views like the Explorer and Search.
-      "sideBar.background": baseSH0,
+      "sideBar.background": base1,
       "sideBar.foreground": highlight0,
       // "sideBar.border":shadow2,
-      "sideBarSectionHeader.background": baseSH1,
+      "sideBarSectionHeader.background": base2,
       "sideBarSectionHeader.foreground": highlight0,
       "sideBarTitle.foreground": highlight0,
   
       // EDITOR GROUPS & TABS - Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.,
       "editorGroup.border":shadow2,
-      "editorGroup.dropBackground": baseSH0,
-      "editorGroupHeader.noTabsBackground": baseSH0,
-      "editorGroupHeader.tabsBackground": baseSH0,
+      "editorGroup.dropBackground": base1,
+      "editorGroupHeader.noTabsBackground": base1,
+      "editorGroupHeader.tabsBackground": base1,
       // "editorGroupHeader.tabsBorder":shadow2,
-      "tab.activeBackground": base,
+      "tab.activeBackground": base0,
       "tab.activeForeground": highlight0,
       "tab.border": highlight3,
-      "tab.activeBorder": base,
-      "tab.unfocusedActiveBorder": base,
-      "tab.inactiveBackground": baseHL2,
+      "tab.activeBorder": base0,
+      "tab.unfocusedActiveBorder": base0,
+      "tab.inactiveBackground": base0HL2,
       "tab.inactiveForeground": highlight1,
       "tab.unfocusedActiveForeground": highlight1,
       "tab.unfocusedInactiveForeground": highlight1,
   
-      // EDITOR COLOR - The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.
-      "editor.background": base,
+      // EDITOR COLOR - The most prominent editor colors are the token colors used for syntax highlighting and are base0d on the language grammar installed.
+      "editor.background": base0,
       "editor.foreground": highlight0,
   
-      "editor.hoverHighlightBackground": baseHL1,
-      "editor.findMatchBackground": baseHL1,
-      "editor.findMatchHighlightBackground": baseHL1,
-      "editor.findRangeHighlightBackground": baseHL1,
-      "editor.lineHighlightBackground": baseHL2,
-      "editor.lineHighlightBorder": baseHL2,
-      "editor.inactiveSelectionBackground": baseHL0,
-      "editor.selectionBackground": baseHL0,
-      "editor.selectionHighlightBackground": baseHL1,
-      "editor.rangeHighlightBackground": baseHL1,
-      "editor.wordHighlightBackground": baseHL1,
-      "editor.wordHighlightStrongBackground": baseHL1,
+      "editor.hoverHighlightBackground": base0HL1,
+      "editor.findMatchBackground": base0HL1,
+      "editor.findMatchHighlightBackground": base0HL1,
+      "editor.findRangeHighlightBackground": base0HL1,
+      "editor.lineHighlightBackground": base0HL2,
+      "editor.lineHighlightBorder": base0HL2,
+      "editor.inactiveSelectionBackground": base0HL0,
+      "editor.selectionBackground": base0HL0,
+      "editor.selectionHighlightBackground": base0HL1,
+      "editor.rangeHighlightBackground": base0HL1,
+      "editor.wordHighlightBackground": base0HL1,
+      "editor.wordHighlightStrongBackground": base0HL1,
   
       "editorError.foreground": red0,
       "editorError.border": red0,
@@ -156,13 +155,13 @@ module.exports = {
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": highlight0,
-      "editorIndentGuide.background": baseHL1,
-      "editorLineNumber.foreground": baseHL1,
-      "editorWhitespace.foreground": baseHL0,
+      "editorIndentGuide.background": base0HL1,
+      "editorLineNumber.foreground": base0HL1,
+      "editorWhitespace.foreground": base0HL0,
   
-      "editorOverviewRuler.border": baseHL1,
-      "editorOverviewRuler.currentContentForeground": baseHL1,
-      "editorOverviewRuler.incomingContentForeground": baseHL1,
+      "editorOverviewRuler.border": base0HL1,
+      "editorOverviewRuler.currentContentForeground": base0HL1,
+      "editorOverviewRuler.incomingContentForeground": base0HL1,
       "editorOverviewRuler.findMatchForeground": highlight2,
       "editorOverviewRuler.rangeHighlightForeground": highlight2,
       "editorOverviewRuler.selectionHighlightForeground": highlight2,
@@ -173,8 +172,8 @@ module.exports = {
       "editorOverviewRuler.deletedForeground": red0,
       "editorOverviewRuler.errorForeground": red0,
       "editorOverviewRuler.warningForeground": lightYellow0,
-      "editorOverviewRuler.infoForeground": baseHL0,
-      "editorOverviewRuler.bracketMatchForeground": baseHL0,
+      "editorOverviewRuler.infoForeground": base0HL0,
+      "editorOverviewRuler.bracketMatchForeground": base0HL0,
   
       "editorGutter.modifiedBackground": lightYellow0,
       "editorGutter.addedBackground": green0,
@@ -185,13 +184,13 @@ module.exports = {
       "diffEditor.removedTextBackground": red2,
   
       // EDITOR WIDGET COLORS - The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
-      "editorWidget.background": baseSH0,
+      "editorWidget.background": base1,
       "editorWidget.border": shadow,
-      "editorSuggestWidget.background": baseSH0,
+      "editorSuggestWidget.background": base1,
   
       // PEEK VIEW COLORS - Peek views are used to show references and declarations as a view inside the editor.
-      "peekViewResult.background": base,
-      "peekViewTitle.background": baseSH0,
+      "peekViewResult.background": base0,
+      "peekViewTitle.background": base1,
   
       // MERGE CONFLICTS - Merge conflict decorations are shown when the editor contains special diff ranges.
       "merge.currentHeaderBackground": yellow1,
@@ -200,33 +199,33 @@ module.exports = {
       "merge.incomingContentBackground": green2,
   
       // PANEL COLORS - Panels are shown below the editor area and contain views like Output and Integrated Terminal.
-      "panel.background": baseSH1,
+      "panel.background": base2,
       "panel.border":shadow2,
       "panelTitle.activeBorder":  blue0,
   
       // STATUS BAR COLORS - The Status Bar is shown in the bottom of the workbench.
-      "statusBar.background": baseSH1,
+      "statusBar.background": base2,
       "statusBar.debuggingBackground":  blue0,
       "statusBar.debuggingForeground": highlight0,
       "statusBar.noFolderForeground": highlight0,
-      "statusBar.noFolderBackground": baseHL1,
+      "statusBar.noFolderBackground": base0HL1,
       "statusBar.foreground": highlight0,
-      "statusBarItem.activeBackground": baseHL1,
-      "statusBarItem.hoverBackground": baseHL2,
-      "statusBarItem.prominentBackground": baseHL1,
-      "statusBarItem.prominentHoverBackground": baseHL2,
+      "statusBarItem.activeBackground": base0HL1,
+      "statusBarItem.hoverBackground": base0HL2,
+      "statusBarItem.prominentBackground": base0HL1,
+      "statusBarItem.prominentHoverBackground": base0HL2,
       "statusBar.border": highlight3,
   
       // TITLE BAR COLORS - Note: These colors are currently only supported on macOS.
-      "titleBar.activeBackground": baseSH0,
+      "titleBar.activeBackground": base1,
       "titleBar.activeForeground": highlight0,
       // "titleBar.border":shadow2,
-      "titleBar.inactiveBackground": baseSH0,
+      "titleBar.inactiveBackground": base1,
       "titleBar.inactiveForeground": highlight1,
   
       // NOTIFICATION COLORS
       "notificationCenterHeader.foreground": highlight0,
-      "notificationCenterHeader.background": baseSH0,
+      "notificationCenterHeader.background": base1,
   
       // EXTENSIONS
       "extensionButton.prominentForeground": white0,
