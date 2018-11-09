@@ -1,9 +1,9 @@
 // set variables for easy color management
   base="#343D46"
 
-  baseHL="#434c5e";
-  baseHL0="#434c5e70";
-  baseHL1="#434c5e40";
+  baseHL0="#434c5e";
+  baseHL1="#434c5e70";
+  baseHL2="#434c5e40";
 
   baseSH0= "#23292e";
   baseSH1="#1d1e22";
@@ -23,7 +23,7 @@
   green2 = "#A3CE9E40";
 
   teal0= "#5fb3b3";
-  teal1= "#5fb3b370";
+  tealHL= "#a5d1d150";
 
   lightBlue0 = "#92b0ce";
 
@@ -89,15 +89,15 @@ module.exports = {
       "progressBar.background": baseSH0,
   
       // LIST AND TREES - Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
-      "list.activeSelectionBackground": baseHL0,
+      "list.activeSelectionBackground": baseHL1,
       "list.activeSelectionForeground": highlight0,
-      "list.inactiveSelectionBackground": baseHL1,
+      "list.inactiveSelectionBackground": baseHL2,
       "list.inactiveSelectionForeground": highlight0,
       "list.hoverForeground": highlight0,
       "list.focusForeground": highlight0,
-      "list.focusBackground": baseHL0,
-      "list.hoverBackground": baseHL1,
-      "list.dropBackground": baseHL,
+      "list.focusBackground": baseHL1,
+      "list.hoverBackground": baseHL2,
+      "list.dropBackground": baseHL0,
       "list.highlightForeground": white0,
       "list.errorForeground": red0,
       "list.warningForeground": yellow0,
@@ -129,7 +129,7 @@ module.exports = {
       "tab.border": highlight3,
       "tab.activeBorder": base,
       "tab.unfocusedActiveBorder": base,
-      "tab.inactiveBackground": baseHL1,
+      "tab.inactiveBackground": baseHL2,
       "tab.inactiveForeground": highlight1,
       "tab.unfocusedActiveForeground": highlight1,
       "tab.unfocusedInactiveForeground": highlight1,
@@ -144,12 +144,12 @@ module.exports = {
       "editor.findRangeHighlightBackground": baseHL0,
       "editor.lineHighlightBackground": baseHL0,
       "editor.lineHighlightBorder": baseHL0,
-      "editor.inactiveSelectionBackground": baseHL0,
-      "editor.selectionBackground": baseHL0,
+      "editor.inactiveSelectionBackground": tealHL,
+      "editor.selectionBackground": tealHL,
       "editor.selectionHighlightBackground": baseHL0,
       "editor.rangeHighlightBackground": baseHL0,
-      "editor.wordHighlightBackground": baseHL0,
-      "editor.wordHighlightStrongBackground": baseHL0,
+      "editor.wordHighlightBackground": highlight3,
+      "editor.wordHighlightStrongBackground": highlight3,
   
       "editorError.foreground": red0,
       "editorError.border": red0,
@@ -157,13 +157,13 @@ module.exports = {
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": highlight0,
-      "editorIndentGuide.background": baseHL,
-      "editorLineNumber.foreground": baseHL,
-      "editorWhitespace.foreground": teal1,
+      "editorIndentGuide.background": baseHL0,
+      "editorLineNumber.foreground": baseHL0,
+      "editorWhitespace.foreground": tealHL,
   
-      "editorOverviewRuler.border": baseHL,
-      "editorOverviewRuler.currentContentForeground": baseHL,
-      "editorOverviewRuler.incomingContentForeground": baseHL,
+      "editorOverviewRuler.border": baseHL0,
+      "editorOverviewRuler.currentContentForeground": baseHL0,
+      "editorOverviewRuler.incomingContentForeground": baseHL0,
       "editorOverviewRuler.findMatchForeground": highlight2,
       "editorOverviewRuler.rangeHighlightForeground": highlight2,
       "editorOverviewRuler.selectionHighlightForeground": highlight2,
@@ -210,12 +210,12 @@ module.exports = {
       "statusBar.debuggingBackground":  blue0,
       "statusBar.debuggingForeground": highlight0,
       "statusBar.noFolderForeground": highlight0,
-      "statusBar.noFolderBackground": baseHL,
+      "statusBar.noFolderBackground": baseHL0,
       "statusBar.foreground": highlight0,
-      "statusBarItem.activeBackground": baseHL,
-      "statusBarItem.hoverBackground": baseHL1,
-      "statusBarItem.prominentBackground": baseHL,
-      "statusBarItem.prominentHoverBackground": baseHL1,
+      "statusBarItem.activeBackground": baseHL0,
+      "statusBarItem.hoverBackground": baseHL2,
+      "statusBarItem.prominentBackground": baseHL0,
+      "statusBarItem.prominentHoverBackground": baseHL2,
       "statusBar.border": highlight3,
   
       // TITLE BAR COLORS - Note: These colors are currently only supported on macOS.

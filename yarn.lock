@@ -452,14 +452,7 @@ gulp-exports2json@^0.1.1:
     gulp-util "^3.0.6"
     through2 "^2.0.0"
 
-gulp-js-to-json@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/gulp-js-to-json/-/gulp-js-to-json-1.1.2.tgz#178b0c680c1c9b1b3ddcdbdb3b9f23d2082b75f5"
-  dependencies:
-    gulp-util "^3.0.8"
-    through2 "^2.0.1"
-
-gulp-util@^3.0.0, gulp-util@^3.0.6, gulp-util@^3.0.8:
+gulp-util@^3.0.0, gulp-util@^3.0.6:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -1247,7 +1240,7 @@ through2@^0.6.1:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
 
-through2@^2.0.0, through2@^2.0.1:
+through2@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
   dependencies:
