@@ -1,11 +1,12 @@
 // set variables for easy color management
+  transparent= "#00000000"
   base0="#343D46"
   base1= "#23292e";
   base2="#1d1e22";
 
   baseHL0="#c6e8ff40";
-  baseHL1="#c6e8ff20";
-  baseHL2="#c6e8ff10";
+  baseHL1="#c6e8ff15";
+  baseHL2="#c6e8ff08";
 
   shadow = "#00000070"
   shadow2 = "#00000040";
@@ -146,8 +147,8 @@ module.exports = {
       "editor.selectionBackground": baseHL0,
       "editor.selectionHighlightBackground": baseHL1,
       "editor.rangeHighlightBackground": baseHL1,
-      "editor.wordHighlightBackground": baseHL1,
-      "editor.wordHighlightStrongBackground": baseHL1,
+      "editor.wordHighlightBackground": transparent,
+      "editor.wordHighlightStrongBackground": transparent,
   
       "editorError.foreground": red0,
       "editorError.border": red0,
