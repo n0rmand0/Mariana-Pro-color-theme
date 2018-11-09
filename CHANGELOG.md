@@ -15,3 +15,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 2.2.0
 - Add color for editor.info
 - Update ReadMe
+
+## 3.0.0
+- Add new themes for Gray and Warm modes
