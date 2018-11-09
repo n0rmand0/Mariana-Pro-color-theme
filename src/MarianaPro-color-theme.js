@@ -3,9 +3,9 @@
   base1= "#23292e";
   base2="#1d1e22";
 
-  base0HL0="#c6e8ff40";
-  base0HL1="#c6e8ff20";
-  base0HL2="#c6e8ff10";
+  baseHL0="#c6e8ff40";
+  baseHL1="#c6e8ff20";
+  baseHL2="#c6e8ff10";
 
   shadow = "#00000070"
   shadow2 = "#00000040";
@@ -87,15 +87,15 @@ module.exports = {
       "progressBar.background": base1,
   
       // LIST AND TREES - Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
-      "list.activeSelectionBackground": base0HL1,
+      "list.activeSelectionBackground": baseHL1,
       "list.activeSelectionForeground": highlight0,
-      "list.inactiveSelectionBackground": base0HL2,
+      "list.inactiveSelectionBackground": baseHL2,
       "list.inactiveSelectionForeground": highlight0,
       "list.hoverForeground": highlight0,
       "list.focusForeground": highlight0,
-      "list.focusBackground": base0HL1,
-      "list.hoverBackground": base0HL2,
-      "list.dropBackground": base0HL1,
+      "list.focusBackground": baseHL1,
+      "list.hoverBackground": baseHL2,
+      "list.dropBackground": baseHL1,
       "list.highlightForeground": white0,
       "list.errorForeground": red0,
       "list.warningForeground": yellow0,
@@ -127,7 +127,7 @@ module.exports = {
       "tab.border": highlight3,
       "tab.activeBorder": base0,
       "tab.unfocusedActiveBorder": base0,
-      "tab.inactiveBackground": base0HL2,
+      "tab.inactiveBackground": baseHL2,
       "tab.inactiveForeground": highlight1,
       "tab.unfocusedActiveForeground": highlight1,
       "tab.unfocusedInactiveForeground": highlight1,
@@ -136,18 +136,18 @@ module.exports = {
       "editor.background": base0,
       "editor.foreground": highlight0,
   
-      "editor.hoverHighlightBackground": base0HL1,
-      "editor.findMatchBackground": base0HL1,
-      "editor.findMatchHighlightBackground": base0HL1,
-      "editor.findRangeHighlightBackground": base0HL1,
-      "editor.lineHighlightBackground": base0HL2,
-      "editor.lineHighlightBorder": base0HL2,
-      "editor.inactiveSelectionBackground": base0HL0,
-      "editor.selectionBackground": base0HL0,
-      "editor.selectionHighlightBackground": base0HL1,
-      "editor.rangeHighlightBackground": base0HL1,
-      "editor.wordHighlightBackground": base0HL1,
-      "editor.wordHighlightStrongBackground": base0HL1,
+      "editor.hoverHighlightBackground": baseHL1,
+      "editor.findMatchBackground": baseHL1,
+      "editor.findMatchHighlightBackground": baseHL1,
+      "editor.findRangeHighlightBackground": baseHL1,
+      "editor.lineHighlightBackground": baseHL2,
+      "editor.lineHighlightBorder": baseHL2,
+      "editor.inactiveSelectionBackground": baseHL0,
+      "editor.selectionBackground": baseHL0,
+      "editor.selectionHighlightBackground": baseHL1,
+      "editor.rangeHighlightBackground": baseHL1,
+      "editor.wordHighlightBackground": baseHL1,
+      "editor.wordHighlightStrongBackground": baseHL1,
   
       "editorError.foreground": red0,
       "editorError.border": red0,
@@ -155,13 +155,13 @@ module.exports = {
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": highlight0,
-      "editorIndentGuide.background": base0HL1,
-      "editorLineNumber.foreground": base0HL1,
-      "editorWhitespace.foreground": base0HL0,
+      "editorIndentGuide.background": baseHL1,
+      "editorLineNumber.foreground": baseHL1,
+      "editorWhitespace.foreground": baseHL0,
   
-      "editorOverviewRuler.border": base0HL1,
-      "editorOverviewRuler.currentContentForeground": base0HL1,
-      "editorOverviewRuler.incomingContentForeground": base0HL1,
+      "editorOverviewRuler.border": baseHL1,
+      "editorOverviewRuler.currentContentForeground": baseHL1,
+      "editorOverviewRuler.incomingContentForeground": baseHL1,
       "editorOverviewRuler.findMatchForeground": highlight2,
       "editorOverviewRuler.rangeHighlightForeground": highlight2,
       "editorOverviewRuler.selectionHighlightForeground": highlight2,
@@ -172,8 +172,8 @@ module.exports = {
       "editorOverviewRuler.deletedForeground": red0,
       "editorOverviewRuler.errorForeground": red0,
       "editorOverviewRuler.warningForeground": lightYellow0,
-      "editorOverviewRuler.infoForeground": base0HL0,
-      "editorOverviewRuler.bracketMatchForeground": base0HL0,
+      "editorOverviewRuler.infoForeground": baseHL0,
+      "editorOverviewRuler.bracketMatchForeground": baseHL0,
   
       "editorGutter.modifiedBackground": lightYellow0,
       "editorGutter.addedBackground": green0,
@@ -208,12 +208,12 @@ module.exports = {
       "statusBar.debuggingBackground":  blue0,
       "statusBar.debuggingForeground": highlight0,
       "statusBar.noFolderForeground": highlight0,
-      "statusBar.noFolderBackground": base0HL1,
+      "statusBar.noFolderBackground": baseHL1,
       "statusBar.foreground": highlight0,
-      "statusBarItem.activeBackground": base0HL1,
-      "statusBarItem.hoverBackground": base0HL2,
-      "statusBarItem.prominentBackground": base0HL1,
-      "statusBarItem.prominentHoverBackground": base0HL2,
+      "statusBarItem.activeBackground": baseHL1,
+      "statusBarItem.hoverBackground": baseHL2,
+      "statusBarItem.prominentBackground": baseHL1,
+      "statusBarItem.prominentHoverBackground": baseHL2,
       "statusBar.border": highlight3,
   
       // TITLE BAR COLORS - Note: These colors are currently only supported on macOS.
