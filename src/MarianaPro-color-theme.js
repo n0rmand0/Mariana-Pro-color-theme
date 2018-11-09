@@ -1,9 +1,9 @@
 // set variables for easy color management
   base="#343D46"
 
-  baseHL0="#434c5e";
-  baseHL1="#434c5e70";
-  baseHL2="#434c5e40";
+  baseHL0="#c6e8ff40";
+  baseHL1="#c6e8ff20";
+  baseHL2="#c6e8ff10";
 
   baseSH0= "#23292e";
   baseSH1="#1d1e22";
@@ -23,7 +23,6 @@
   green2 = "#A3CE9E40";
 
   teal0= "#5fb3b3";
-  tealHL= "#a5c9d150";
 
   lightBlue0 = "#92b0ce";
 
@@ -97,7 +96,7 @@ module.exports = {
       "list.focusForeground": highlight0,
       "list.focusBackground": baseHL1,
       "list.hoverBackground": baseHL2,
-      "list.dropBackground": baseHL0,
+      "list.dropBackground": baseHL1,
       "list.highlightForeground": white0,
       "list.errorForeground": red0,
       "list.warningForeground": yellow0,
@@ -138,18 +137,18 @@ module.exports = {
       "editor.background": base,
       "editor.foreground": highlight0,
   
-      "editor.hoverHighlightBackground": baseHL0,
-      "editor.findMatchBackground": baseHL0,
-      "editor.findMatchHighlightBackground": baseHL0,
-      "editor.findRangeHighlightBackground": baseHL0,
-      "editor.lineHighlightBackground": baseHL0,
-      "editor.lineHighlightBorder": baseHL0,
-      "editor.inactiveSelectionBackground": tealHL,
-      "editor.selectionBackground": tealHL,
-      "editor.selectionHighlightBackground": baseHL0,
-      "editor.rangeHighlightBackground": baseHL0,
-      "editor.wordHighlightBackground": highlight3,
-      "editor.wordHighlightStrongBackground": highlight3,
+      "editor.hoverHighlightBackground": baseHL1,
+      "editor.findMatchBackground": baseHL1,
+      "editor.findMatchHighlightBackground": baseHL1,
+      "editor.findRangeHighlightBackground": baseHL1,
+      "editor.lineHighlightBackground": baseHL2,
+      "editor.lineHighlightBorder": baseHL2,
+      "editor.inactiveSelectionBackground": baseHL0,
+      "editor.selectionBackground": baseHL0,
+      "editor.selectionHighlightBackground": baseHL1,
+      "editor.rangeHighlightBackground": baseHL1,
+      "editor.wordHighlightBackground": baseHL1,
+      "editor.wordHighlightStrongBackground": baseHL1,
   
       "editorError.foreground": red0,
       "editorError.border": red0,
@@ -157,13 +156,13 @@ module.exports = {
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": highlight0,
-      "editorIndentGuide.background": baseHL0,
-      "editorLineNumber.foreground": baseHL0,
-      "editorWhitespace.foreground": tealHL,
+      "editorIndentGuide.background": baseHL1,
+      "editorLineNumber.foreground": baseHL1,
+      "editorWhitespace.foreground": baseHL0,
   
-      "editorOverviewRuler.border": baseHL0,
-      "editorOverviewRuler.currentContentForeground": baseHL0,
-      "editorOverviewRuler.incomingContentForeground": baseHL0,
+      "editorOverviewRuler.border": baseHL1,
+      "editorOverviewRuler.currentContentForeground": baseHL1,
+      "editorOverviewRuler.incomingContentForeground": baseHL1,
       "editorOverviewRuler.findMatchForeground": highlight2,
       "editorOverviewRuler.rangeHighlightForeground": highlight2,
       "editorOverviewRuler.selectionHighlightForeground": highlight2,
@@ -174,8 +173,8 @@ module.exports = {
       "editorOverviewRuler.deletedForeground": red0,
       "editorOverviewRuler.errorForeground": red0,
       "editorOverviewRuler.warningForeground": lightYellow0,
-      "editorOverviewRuler.infoForeground": highlight2,
-      "editorOverviewRuler.bracketMatchForeground": highlight2,
+      "editorOverviewRuler.infoForeground": baseHL0,
+      "editorOverviewRuler.bracketMatchForeground": baseHL0,
   
       "editorGutter.modifiedBackground": lightYellow0,
       "editorGutter.addedBackground": green0,
@@ -210,11 +209,11 @@ module.exports = {
       "statusBar.debuggingBackground":  blue0,
       "statusBar.debuggingForeground": highlight0,
       "statusBar.noFolderForeground": highlight0,
-      "statusBar.noFolderBackground": baseHL0,
+      "statusBar.noFolderBackground": baseHL1,
       "statusBar.foreground": highlight0,
-      "statusBarItem.activeBackground": baseHL0,
+      "statusBarItem.activeBackground": baseHL1,
       "statusBarItem.hoverBackground": baseHL2,
-      "statusBarItem.prominentBackground": baseHL0,
+      "statusBarItem.prominentBackground": baseHL1,
       "statusBarItem.prominentHoverBackground": baseHL2,
       "statusBar.border": highlight3,
   
