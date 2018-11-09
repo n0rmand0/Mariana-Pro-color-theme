@@ -26,7 +26,7 @@
         "Tomato"
     ]
   ```
-- **Fira Code with Font Ligatures:**  The font *Fira Code* is shown in the screenshots with Font Ligatures enabled.  Download the font [here](https://github.com/tonsky/FiraCode) and use with the following user setting:
+- **Fira Code with Font Ligatures:**  The font *Fira Code* is shown in the screenshots with Font Ligatures enabled.  Download the font [here](https://github.com/tonsky/FiraCode) and use with the following user settings:
   ```
     "editor.fontFamily": "Fira Code, monospace",
     "editor.fontLigatures": true
