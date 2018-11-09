@@ -23,7 +23,7 @@
   green2 = "#A3CE9E40";
 
   teal0= "#5fb3b3";
-  tealHL= "#a5d1d150";
+  tealHL= "#a5c9d150";
 
   lightBlue0 = "#92b0ce";
 
