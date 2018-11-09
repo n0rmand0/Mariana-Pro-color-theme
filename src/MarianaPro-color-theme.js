@@ -1,44 +1,58 @@
 // set variables for easy color management
-  transparent= "#00000000"
-  base0="#343D46"
-  base1= "#23292e";
-  base2="#1d1e22";
+transparent= "#00000000"
+// cool
+base0="#343D46"
+base1= "#23292e";
+base2="#1d1e22";
+baseHL0="#d0f4ff40";
+baseHL1="#d0f4ff12";
+baseHL2="#d0f4ff08";
 
-  baseHL0="#c6e8ff40";
-  baseHL1="#c6e8ff15";
-  baseHL2="#c6e8ff08";
+// //warm
+// base0="#423935"
+// base1= "#2e2825";
+// base2="#25201e";
+// baseHL0="#ffe4d440";
+// baseHL1="#ffe4d412";
+// baseHL2="#ffe4d408";
 
-  shadow = "#00000070"
-  shadow2 = "#00000040";
-  
-  highlight0 = "#ffffffdd";
-  highlight1 = "#ffffff70";
-  highlight2= "#ffffff30"
-  highlight3="#ffffff10";
+// //gray
+// base0="#3d3d3d"
+// base1= "#2b2b2b";
+// base2="#222222";
+// baseHL0="#f4f4f440";
+// baseHL1="#f4f4f412";
+// baseHL2="#f4f4f408";
 
-  white0= "#ffffff";
+shadow0 = "#00000070"
+shadow1 = "#00000040";
 
-  green0 = "#A3CE9E";
-  green1 = "#A3CE9E70";
-  green2 = "#A3CE9E40";
+white0= "#ffffffdd";
+white1 = "#ffffff70";
+white2= "#ffffff30"
+white3="#ffffff10";
 
-  teal0= "#5fb3b3";
+green0 = "#A3CE9E";
+green1 = "#A3CE9E70";
+green2 = "#A3CE9E40";
 
-  lightBlue0 = "#92b0ce";
+teal0= "#5fb3b3";
 
-  blue0= "#6699cc";
-  blue1= "#6699cc70";
+lightBlue0 = "#92b0ce";
 
-  lightYellow0= "#ebcb8b";
-  yellow0= "#FAB763";
-  yellow1= "#FAB76370";
-  yellow2= "#FAB76340";
-  orangeRed="#FA8763";
-  red0="#EE6A6F";
-  red1="#EE6A6Fcc"
-  red2="#EE6A6F40";
+blue0= "#6699cc";
+blue1= "#6699cc70";
 
-  purple0= "#c594c5";
+lightYellow0= "#ebcb8b";
+yellow0= "#FAB763";
+yellow1= "#FAB76370";
+yellow2= "#FAB76340";
+orangeRed="#FA8763";
+red0="#EE6A6F";
+red1="#EE6A6Fcc"
+red2="#EE6A6F40";
+
+purple0= "#c594c5";
 
 
 // exportable json via `gulp`
@@ -48,11 +62,11 @@ module.exports = {
     "colors": {
       // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
   
-      //  BASE0 COLORS
-      "focusBorder":shadow2,
-      "foreground": highlight0,
-      "selection.background": highlight2,
-      "widget.shadow":shadow2,
+      //  BASE COLORS
+      "focusBorder":shadow1,
+      "foreground": white0,
+      "selection.background": white2,
+      "widget.shadow0":shadow1,
   
       // TEXT COLORS - Colors inside a text document, such as the welcome page.
       "textLink.activeForeground":  blue0,
@@ -71,14 +85,14 @@ module.exports = {
       // INPUT CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
       "input.background": base0,
       "input.border": base0,
-      "input.foreground": highlight0,
-      "input.placeholderForeground": highlight1,
+      "input.foreground": white0,
+      "input.placeholderForeground": white1,
   
       // SCROLL BAR CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
-      "scrollbar.shadow": shadow,
-      "scrollbarSlider.activeBackground": highlight2,
-      "scrollbarSlider.background": highlight3,
-      "scrollbarSlider.hoverBackground": highlight2,
+      "scrollbar.shadow0": shadow0,
+      "scrollbarSlider.activeBackground": baseHL0,
+      "scrollbarSlider.background": baseHL1,
+      "scrollbarSlider.hoverBackground": baseHL0,
   
       // BADGE - Badges are small information labels, for example, search results count.
       "badge.foreground": white0,
@@ -89,11 +103,11 @@ module.exports = {
   
       // LIST AND TREES - Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
       "list.activeSelectionBackground": baseHL1,
-      "list.activeSelectionForeground": highlight0,
+      "list.activeSelectionForeground": white0,
       "list.inactiveSelectionBackground": baseHL2,
-      "list.inactiveSelectionForeground": highlight0,
-      "list.hoverForeground": highlight0,
-      "list.focusForeground": highlight0,
+      "list.inactiveSelectionForeground": white0,
+      "list.hoverForeground": white0,
+      "list.focusForeground": white0,
       "list.focusBackground": baseHL1,
       "list.hoverBackground": baseHL2,
       "list.dropBackground": baseHL1,
@@ -104,38 +118,38 @@ module.exports = {
       // ACTIVITY BAR - The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar
       "activityBar.background": base1,
       "activityBar.dropBackground": base0,
-      "activityBar.foreground": highlight0,
-      // "activityBar.border":shadow2,
+      "activityBar.foreground": white0,
+      // "activityBar.border":shadow1,
       "activityBarBadge.background": red1,
       "activityBarBadge.foreground": white0,
   
       // SIDE BAR - The Side Bar contains views like the Explorer and Search.
       "sideBar.background": base1,
-      "sideBar.foreground": highlight0,
-      // "sideBar.border":shadow2,
+      "sideBar.foreground": white0,
+      // "sideBar.border":shadow1,
       "sideBarSectionHeader.background": base2,
-      "sideBarSectionHeader.foreground": highlight0,
-      "sideBarTitle.foreground": highlight0,
+      "sideBarSectionHeader.foreground": white0,
+      "sideBarTitle.foreground": white0,
   
       // EDITOR GROUPS & TABS - Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.,
-      "editorGroup.border":shadow2,
+      "editorGroup.border":shadow1,
       "editorGroup.dropBackground": base1,
       "editorGroupHeader.noTabsBackground": base1,
       "editorGroupHeader.tabsBackground": base1,
-      // "editorGroupHeader.tabsBorder":shadow2,
+      // "editorGroupHeader.tabsBorder":shadow1,
       "tab.activeBackground": base0,
-      "tab.activeForeground": highlight0,
-      "tab.border": highlight3,
+      "tab.activeForeground": white0,
+      "tab.border": white3,
       "tab.activeBorder": base0,
       "tab.unfocusedActiveBorder": base0,
       "tab.inactiveBackground": baseHL2,
-      "tab.inactiveForeground": highlight1,
-      "tab.unfocusedActiveForeground": highlight1,
-      "tab.unfocusedInactiveForeground": highlight1,
+      "tab.inactiveForeground": white1,
+      "tab.unfocusedActiveForeground": white1,
+      "tab.unfocusedInactiveForeground": white1,
   
       // EDITOR COLOR - The most prominent editor colors are the token colors used for syntax highlighting and are base0d on the language grammar installed.
       "editor.background": base0,
-      "editor.foreground": highlight0,
+      "editor.foreground": white0,
   
       "editor.hoverHighlightBackground": baseHL1,
       "editor.findMatchBackground": baseHL1,
@@ -155,19 +169,19 @@ module.exports = {
       "editorWarning.foreground": yellow0,
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
-      "editorCursor.foreground": highlight0,
+      "editorCursor.foreground": white0,
       "editorIndentGuide.background": baseHL1,
       "editorLineNumber.foreground": baseHL1,
       "editorWhitespace.foreground": baseHL0,
   
       "editorOverviewRuler.border": baseHL1,
-      "editorOverviewRuler.currentContentForeground": baseHL1,
-      "editorOverviewRuler.incomingContentForeground": baseHL1,
-      "editorOverviewRuler.findMatchForeground": highlight2,
-      "editorOverviewRuler.rangeHighlightForeground": highlight2,
-      "editorOverviewRuler.selectionHighlightForeground": highlight2,
-      "editorOverviewRuler.wordHighlightForeground": highlight2,
-      "editorOverviewRuler.wordHighlightStrongForeground": highlight2,
+      "editorOverviewRuler.currentContentForeground": baseHL0,
+      "editorOverviewRuler.incomingContentForeground": baseHL0,
+      "editorOverviewRuler.findMatchForeground": baseHL0,
+      "editorOverviewRuler.rangeHighlightForeground": baseHL0,
+      "editorOverviewRuler.selectionHighlightForeground": baseHL0,
+      "editorOverviewRuler.wordHighlightForeground": baseHL0,
+      "editorOverviewRuler.wordHighlightStrongForeground": baseHL0,
       "editorOverviewRuler.modifiedForeground": lightYellow0,
       "editorOverviewRuler.addedForeground": green0,
       "editorOverviewRuler.deletedForeground": red0,
@@ -186,7 +200,7 @@ module.exports = {
   
       // EDITOR WIDGET COLORS - The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
       "editorWidget.background": base1,
-      "editorWidget.border": shadow,
+      "editorWidget.border": shadow0,
       "editorSuggestWidget.background": base1,
   
       // PEEK VIEW COLORS - Peek views are used to show references and declarations as a view inside the editor.
@@ -201,31 +215,31 @@ module.exports = {
   
       // PANEL COLORS - Panels are shown below the editor area and contain views like Output and Integrated Terminal.
       "panel.background": base2,
-      "panel.border":shadow2,
+      "panel.border":shadow1,
       "panelTitle.activeBorder":  blue0,
   
       // STATUS BAR COLORS - The Status Bar is shown in the bottom of the workbench.
       "statusBar.background": base2,
       "statusBar.debuggingBackground":  blue0,
-      "statusBar.debuggingForeground": highlight0,
-      "statusBar.noFolderForeground": highlight0,
+      "statusBar.debuggingForeground": white0,
+      "statusBar.noFolderForeground": white0,
       "statusBar.noFolderBackground": baseHL1,
-      "statusBar.foreground": highlight0,
+      "statusBar.foreground": white0,
       "statusBarItem.activeBackground": baseHL1,
       "statusBarItem.hoverBackground": baseHL2,
       "statusBarItem.prominentBackground": baseHL1,
       "statusBarItem.prominentHoverBackground": baseHL2,
-      "statusBar.border": highlight3,
+      "statusBar.border": white3,
   
       // TITLE BAR COLORS - Note: These colors are currently only supported on macOS.
       "titleBar.activeBackground": base1,
-      "titleBar.activeForeground": highlight0,
-      // "titleBar.border":shadow2,
+      "titleBar.activeForeground": white0,
+      // "titleBar.border":shadow1,
       "titleBar.inactiveBackground": base1,
-      "titleBar.inactiveForeground": highlight1,
+      "titleBar.inactiveForeground": white1,
   
       // NOTIFICATION COLORS
-      "notificationCenterHeader.foreground": highlight0,
+      "notificationCenterHeader.foreground": white0,
       "notificationCenterHeader.background": base1,
   
       // EXTENSIONS
@@ -238,8 +252,8 @@ module.exports = {
       "pickerGroup.foreground": blue0,
   
       // INTEGRATED TERMINAL COLORS
-      "terminal.ansiBrightBlack": highlight0,
-      "terminal.ansiBlack": highlight0,
+      "terminal.ansiBrightBlack": white0,
+      "terminal.ansiBlack": white0,
       "terminal.ansiBlue":  blue0,
       "terminal.ansiBrightBlue":  blue0,
       "terminal.ansiBrightCyan":  blue0,
@@ -252,30 +266,30 @@ module.exports = {
       "terminal.ansiBrightYellow": yellow0,
       "terminal.ansiBrightGreen": green0,
       "terminal.ansiGreen": green0,
-      "terminal.ansiWhite": highlight0,
-      "terminal.selectionBackground": highlight2,
-      "terminalCursor.background": highlight2,
-      "terminalCursor.foreground": highlight0,
+      "terminal.ansiWhite": white0,
+      "terminal.selectionBackground": white2,
+      "terminalCursor.background": white2,
+      "terminalCursor.foreground": white0,
   
       // GIT COLORS
       "gitDecoration.modifiedResourceForeground": lightYellow0,
       "gitDecoration.deletedResourceForeground": red0,
-      "gitDecoration.untrackedResourceForeground": highlight1,
+      "gitDecoration.untrackedResourceForeground": white1,
       "gitDecoration.conflictingResourceForeground": red0,
-      "gitDecoration.submoduleResourceForeground": highlight1
+      "gitDecoration.submoduleResourceForeground": white1
   
       // BREADCRUMBS - The theme colors for breadcrumbs navigation
       // "breadcrumb.foreground": white0,
       // "breadcrumb.focusForeground": white0,
       // "breadcrumb.activeSelectionForeground": white0,
-      // "breadcrumbPicker.background": shadow,
+      // "breadcrumbPicker.background": shadow0,
     },
     "tokenColors": [
       {
         "name": "Comment",
         "scope": ["comment", "punctuation.definition.comment"],
         "settings": {
-          "foreground": highlight1
+          "foreground": white1
         }
       },
       {
@@ -337,7 +351,7 @@ module.exports = {
         "name": "Embedded Line Template Line JS",
         "scope": "string.template.js meta.template.expression.js meta.embedded.line.js",
         "settings": {
-          "foreground": highlight0
+          "foreground": white0
         }
       },
       {
@@ -351,7 +365,7 @@ module.exports = {
         "name": "Punctuation",
         "scope": ["punctuation.separator", "punctuation.terminator"],
         "settings": {
-          "foreground": highlight1
+          "foreground": white1
         }
       },
       {
@@ -365,7 +379,7 @@ module.exports = {
         "name": "Accessor",
         "scope": "punctuation.accessor",
         "settings": {
-          "foreground": highlight1 
+          "foreground": white1 
         }
       },
       {
@@ -498,7 +512,7 @@ module.exports = {
         "name": "Invalid",
         "scope": "invalid",
         "settings": {
-          "foreground": highlight1
+          "foreground": white1
         }
       },
       {
@@ -519,7 +533,7 @@ module.exports = {
         "name": "YAML String",
         "scope": "source.yaml string.unquoted",
         "settings": {
-          "foreground": highlight0
+          "foreground": white0
         }
       },
       {
@@ -635,7 +649,7 @@ module.exports = {
         "scope": "support.type.property-name",
         "settings": {
           "fontStyle": "",
-          "foreground": highlight0
+          "foreground": white0
         }
       },
       {
