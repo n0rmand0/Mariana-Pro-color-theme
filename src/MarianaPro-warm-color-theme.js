@@ -49,7 +49,7 @@ module.exports = {
     // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
 
     //  BASE COLORS
-    "focusBorder": highlight1,
+    "focusBorder": highlight0,
     "foreground": white0,
     "selection.background": white2,
     "widget.shadow": shadow1,
@@ -70,7 +70,7 @@ module.exports = {
 
     // INPUT CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
     "input.background": base0,
-    "input.border": base0,
+    "input.border": highlight1,
     "input.foreground": white0,
     "input.placeholderForeground": white1,
 
