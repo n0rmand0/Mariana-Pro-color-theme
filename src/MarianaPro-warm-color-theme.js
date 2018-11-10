@@ -1,20 +1,13 @@
 // set variables for easy color management
 transparent= "#00000000"
-// cool
-base0="#343D46"
-base1= "#23292e";
-base2="#1d1e22";
-baseHL0="#d0f4ff40";
-baseHL1="#d0f4ff12";
-baseHL2="#d0f4ff08";
 
 // //warm
 base0="#3d3734"
 base1= "#2b2624";
 base2="#221e1d";
-baseHL0="#ffe4d440";
-baseHL1="#ffe4d412";
-baseHL2="#ffe4d408";
+baseHL0="#ffe4d430";
+baseHL1="#ffe4d414";
+baseHL2="#ffe4d407";
 
 // //gray
 // base0="#3d3d3d"
@@ -171,7 +164,7 @@ module.exports = {
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": white0,
       "editorIndentGuide.background": baseHL1,
-      "editorLineNumber.foreground": baseHL1,
+      "editorLineNumber.foreground": baseHL0,
       "editorWhitespace.foreground": baseHL0,
   
       "editorOverviewRuler.border": baseHL1,
