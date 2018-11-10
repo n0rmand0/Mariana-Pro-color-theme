@@ -5,17 +5,10 @@ transparent= "#00000000"
 base0="#3d3734"
 base1= "#2b2624";
 base2="#221e1d";
-baseHL0="#ffe4d430";
-baseHL1="#ffe4d414";
-baseHL2="#ffe4d407";
 
-// //gray
-// base0="#3d3d3d"
-// base1= "#2b2b2b";
-// base2="#222222";
-// baseHL0="#f4f4f440";
-// baseHL1="#f4f4f412";
-// baseHL2="#f4f4f408";
+highlight0="#ffe4d430";
+highlight1="#ffe4d414";
+highlight2="#ffe4d407";
 
 shadow0 = "#00000070"
 shadow1 = "#00000040";
@@ -56,10 +49,10 @@ module.exports = {
       // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
   
       //  BASE COLORS
-      "focusBorder":shadow1,
+      "focusBorder":highlight1,
       "foreground": white0,
       "selection.background": white2,
-      "widget.shadow0":shadow1,
+      "widget.shadow":shadow1,
   
       // TEXT COLORS - Colors inside a text document, such as the welcome page.
       "textLink.activeForeground":  blue0,
@@ -82,10 +75,10 @@ module.exports = {
       "input.placeholderForeground": white1,
   
       // SCROLL BAR CONTROL - Colors for input controls such as in the Search view or the Find/Replace dialog.
-      "scrollbar.shadow0": shadow0,
-      "scrollbarSlider.activeBackground": baseHL0,
-      "scrollbarSlider.background": baseHL1,
-      "scrollbarSlider.hoverBackground": baseHL0,
+      "scrollbar.shadow": shadow0,
+      "scrollbarSlider.activeBackground": highlight0,
+      "scrollbarSlider.background": highlight1,
+      "scrollbarSlider.hoverBackground": highlight0,
   
       // BADGE - Badges are small information labels, for example, search results count.
       "badge.foreground": white0,
@@ -95,15 +88,15 @@ module.exports = {
       "progressBar.background": base1,
   
       // LIST AND TREES - Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
-      "list.activeSelectionBackground": baseHL1,
+      "list.activeSelectionBackground": highlight1,
       "list.activeSelectionForeground": white0,
-      "list.inactiveSelectionBackground": baseHL2,
+      "list.inactiveSelectionBackground": highlight2,
       "list.inactiveSelectionForeground": white0,
       "list.hoverForeground": white0,
       "list.focusForeground": white0,
-      "list.focusBackground": baseHL1,
-      "list.hoverBackground": baseHL2,
-      "list.dropBackground": baseHL1,
+      "list.focusBackground": highlight1,
+      "list.hoverBackground": highlight2,
+      "list.dropBackground": highlight1,
       "list.highlightForeground": white0,
       "list.errorForeground": red0,
       "list.warningForeground": yellow0,
@@ -119,7 +112,7 @@ module.exports = {
       // SIDE BAR - The Side Bar contains views like the Explorer and Search.
       "sideBar.background": base1,
       "sideBar.foreground": white0,
-      // "sideBar.border":shadow1,
+      // "sideBar.border":,
       "sideBarSectionHeader.background": base2,
       "sideBarSectionHeader.foreground": white0,
       "sideBarTitle.foreground": white0,
@@ -135,7 +128,7 @@ module.exports = {
       "tab.border": white3,
       "tab.activeBorder": base0,
       "tab.unfocusedActiveBorder": base0,
-      "tab.inactiveBackground": baseHL2,
+      "tab.inactiveBackground": highlight2,
       "tab.inactiveForeground": white1,
       "tab.unfocusedActiveForeground": white1,
       "tab.unfocusedInactiveForeground": white1,
@@ -144,16 +137,16 @@ module.exports = {
       "editor.background": base0,
       "editor.foreground": white0,
   
-      "editor.hoverHighlightBackground": baseHL1,
-      "editor.findMatchBackground": baseHL1,
-      "editor.findMatchHighlightBackground": baseHL1,
-      "editor.findRangeHighlightBackground": baseHL1,
-      "editor.lineHighlightBackground": baseHL2,
-      "editor.lineHighlightBorder": baseHL2,
-      "editor.inactiveSelectionBackground": baseHL0,
-      "editor.selectionBackground": baseHL0,
-      "editor.selectionHighlightBackground": baseHL1,
-      "editor.rangeHighlightBackground": baseHL1,
+      "editor.hoverHighlightBackground": highlight1,
+      "editor.findMatchBackground": highlight1,
+      "editor.findMatchHighlightBackground": highlight1,
+      "editor.findRangeHighlightBackground": highlight1,
+      "editor.lineHighlightBackground": highlight2,
+      "editor.lineHighlightBorder": highlight2,
+      "editor.inactiveSelectionBackground": highlight0,
+      "editor.selectionBackground": highlight0,
+      "editor.selectionHighlightBackground": highlight1,
+      "editor.rangeHighlightBackground": highlight1,
       "editor.wordHighlightBackground": transparent,
       "editor.wordHighlightStrongBackground": transparent,
   
@@ -163,25 +156,25 @@ module.exports = {
       "editorInfo.foreground": green0,
       "editorWarning.border": lightYellow0,
       "editorCursor.foreground": white0,
-      "editorIndentGuide.background": baseHL1,
-      "editorLineNumber.foreground": baseHL0,
-      "editorWhitespace.foreground": baseHL0,
+      "editorIndentGuide.background": highlight1,
+      "editorLineNumber.foreground": highlight0,
+      "editorWhitespace.foreground": highlight0,
   
-      "editorOverviewRuler.border": baseHL1,
-      "editorOverviewRuler.currentContentForeground": baseHL0,
-      "editorOverviewRuler.incomingContentForeground": baseHL0,
-      "editorOverviewRuler.findMatchForeground": baseHL0,
-      "editorOverviewRuler.rangeHighlightForeground": baseHL0,
-      "editorOverviewRuler.selectionHighlightForeground": baseHL0,
-      "editorOverviewRuler.wordHighlightForeground": baseHL0,
-      "editorOverviewRuler.wordHighlightStrongForeground": baseHL0,
+      "editorOverviewRuler.border": highlight1,
+      "editorOverviewRuler.currentContentForeground": highlight0,
+      "editorOverviewRuler.incomingContentForeground": highlight0,
+      "editorOverviewRuler.findMatchForeground": highlight0,
+      "editorOverviewRuler.rangeHighlightForeground": highlight0,
+      "editorOverviewRuler.selectionHighlightForeground": highlight0,
+      "editorOverviewRuler.wordHighlightForeground": highlight0,
+      "editorOverviewRuler.wordHighlightStrongForeground": highlight0,
       "editorOverviewRuler.modifiedForeground": lightYellow0,
       "editorOverviewRuler.addedForeground": green0,
       "editorOverviewRuler.deletedForeground": red0,
       "editorOverviewRuler.errorForeground": red0,
       "editorOverviewRuler.warningForeground": lightYellow0,
-      "editorOverviewRuler.infoForeground": baseHL0,
-      "editorOverviewRuler.bracketMatchForeground": baseHL0,
+      "editorOverviewRuler.infoForeground": highlight0,
+      "editorOverviewRuler.bracketMatchForeground": highlight0,
   
       "editorGutter.modifiedBackground": lightYellow0,
       "editorGutter.addedBackground": green0,
@@ -193,7 +186,7 @@ module.exports = {
   
       // EDITOR WIDGET COLORS - The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
       "editorWidget.background": base1,
-      "editorWidget.border": shadow0,
+      "editorWidget.border": highlight0,
       "editorSuggestWidget.background": base1,
   
       // PEEK VIEW COLORS - Peek views are used to show references and declarations as a view inside the editor.
@@ -208,7 +201,7 @@ module.exports = {
   
       // PANEL COLORS - Panels are shown below the editor area and contain views like Output and Integrated Terminal.
       "panel.background": base2,
-      "panel.border":shadow1,
+      "panel.border": highlight1,
       "panelTitle.activeBorder":  blue0,
   
       // STATUS BAR COLORS - The Status Bar is shown in the bottom of the workbench.
@@ -216,13 +209,13 @@ module.exports = {
       "statusBar.debuggingBackground":  blue0,
       "statusBar.debuggingForeground": white0,
       "statusBar.noFolderForeground": white0,
-      "statusBar.noFolderBackground": baseHL1,
+      "statusBar.noFolderBackground": highlight1,
       "statusBar.foreground": white0,
-      "statusBarItem.activeBackground": baseHL1,
-      "statusBarItem.hoverBackground": baseHL2,
-      "statusBarItem.prominentBackground": baseHL1,
-      "statusBarItem.prominentHoverBackground": baseHL2,
-      "statusBar.border": white3,
+      "statusBarItem.activeBackground": highlight1,
+      "statusBarItem.hoverBackground": highlight2,
+      "statusBarItem.prominentBackground": highlight1,
+      "statusBarItem.prominentHoverBackground": highlight2,
+      "statusBar.border": highlight1,
   
       // TITLE BAR COLORS - Note: These colors are currently only supported on macOS.
       "titleBar.activeBackground": base1,
