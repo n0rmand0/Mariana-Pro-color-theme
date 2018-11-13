@@ -2,9 +2,9 @@
 transparent = "#00000000"
 
 // //gray
-base0 = "#3d3d3d"
-base1 = "#2b2b2b";
-base2 = "#222222";
+base0 = "#3a3a3a"
+base1 = "#282828";
+base2 = "#1d1d1d";
 
 highlight0 = "#f4f4f430";
 highlight1 = "#f4f4f414";

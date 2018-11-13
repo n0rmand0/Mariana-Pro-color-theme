@@ -4,7 +4,7 @@ transparent = "#00000000"
 // //warm
 base0 = "#3d3734"
 base1 = "#2b2624";
-base2 = "#221e1d";
+base2 = "#211D1C";
 
 highlight0 = "#ffe4d430";
 highlight1 = "#ffe4d414";
