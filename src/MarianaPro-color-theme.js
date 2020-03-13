@@ -418,7 +418,7 @@ module.exports = {
       "name": "Entity name",
       "scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
       "settings": {
-        "foreground": yellow0
+        // "foreground": yellow0
       }
     },
     {
@@ -489,7 +489,7 @@ module.exports = {
       "scope": ["support.type", "support.class"],
       "settings": {
         // "fontStyle": "italic",
-        "foreground": blue0
+        // "foreground": blue0
       }
     },
     {

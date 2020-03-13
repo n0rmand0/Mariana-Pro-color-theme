@@ -1,48 +1,53 @@
 {
-    "name": "mariana-pro",
-    "displayName": "Mariana Pro",
-    "description": "A complete color theme for VS Code based on Sublime Text's Mariana Syntax and Adaptive UI",
-    "version": "3.0.6",
-    "publisher": "rickynormandeau",
-    "repository": "https://github.com/n0rmand0/Mariana-Pro-color-theme",
-    "engines": {
-        "vscode": "^1.23.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "keywords": [
-        "Sublime Text",
-        "Mariana",
-        "Adaptive UI",
-        "Color Theme",
-        "Theme"
-    ],
-    "icon": "icon.png",
-    "contributes": {
-        "themes": [
-            {
-                "label": "Mariana Pro (Cool)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/MarianaPro-color-theme.json"
-            },
-            {
-                "label": "Mariana Pro (Warm)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/MarianaPro-warm-color-theme.json"
-            },
-            {
-                "label": "Mariana Pro (Gray)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/MarianaPro-gray-color-theme.json"
-            }
-        ]
-    },
-    "dependencies": {
-        "gulp": "^3.9.1",
-        "gulp-exports2json": "^0.1.1"
-    },
-    "scripts": {
-        "build": "gulp"
-    }
+	"name": "mariana-pro",
+	"displayName": "Mariana Pro",
+	"description": "A complete color theme for VS Code based on Sublime Text's Mariana Syntax and Adaptive UI",
+	"version": "3.0.6",
+	"publisher": "rickynormandeau",
+	"repository": "https://github.com/n0rmand0/Mariana-Pro-color-theme",
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"Sublime Text",
+		"Mariana",
+		"Adaptive UI",
+		"Color Theme",
+		"Theme"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Mariana Pro (Cool)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/MarianaPro-color-theme.json"
+			},
+			{
+				"label": "Mariana Pro (Warm)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/MarianaPro-warm-color-theme.json"
+			},
+			{
+				"label": "Mariana Pro (Gray)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/MarianaPro-gray-color-theme.json"
+			}
+		]
+	},
+	"dependencies": {
+		"gulp": "^3.9.1",
+		"gulp-exports2json": "^0.1.1"
+	},
+	"scripts": {
+		"build": "gulp"
+	},
+	"__metadata": {
+		"id": "277bf96b-1860-4ab7-a49a-5a3bcb2a1d9d",
+		"publisherDisplayName": "ricky.normandeau",
+		"publisherId": "7ead53f5-d588-43ac-8dff-ea2a4e4a09b1"
+	}
 }
