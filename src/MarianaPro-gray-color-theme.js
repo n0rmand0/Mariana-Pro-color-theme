@@ -151,10 +151,10 @@ module.exports = {
     "editor.wordHighlightStrongBackground": transparent,
 
     "editorError.foreground": red0,
-    "editorError.border": red0,
+    "editorError.border": transparent,
     "editorWarning.foreground": yellow0,
     "editorInfo.foreground": green0,
-    "editorWarning.border": lightYellow0,
+    "editorWarning.border": transparent,
     "editorCursor.foreground": white0,
     "editorIndentGuide.background": highlight1,
     "editorLineNumber.foreground": highlight0,
@@ -473,7 +473,7 @@ module.exports = {
       "name": "Library function",
       "scope": ["support.function", "support.macro"],
       "settings": {
-        "fontStyle": "italic",
+        // "fontStyle": "italic",
         "foreground": blue0
       }
     },
@@ -490,7 +490,7 @@ module.exports = {
       "scope": ["support.type", "support.class"],
       "settings": {
         // "fontStyle": "italic",
-        // "foreground": blue0
+        "foreground": blue0
       }
     },
     {
