@@ -189,6 +189,10 @@ module.exports = {
     "editorSuggestWidget.background": base1,
 
     // PEEK VIEW COLORS - Peek views are used to show references and declarations as a view inside the editor.
+    "peekView.border": blue0,
+    "peekViewEditor.matchHighlightBackground": highlight0,
+    "peekViewEditorGutter.background": base1,
+    "peekViewEditor.background": base1,
     "peekViewResult.background": base0,
     "peekViewTitle.background": base1,
 
