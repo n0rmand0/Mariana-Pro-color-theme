@@ -1,8 +1,8 @@
 // set variables for easy color management
-transparent = "#00000000"
+transparent = "#00000000";
 
 // //warm
-base0 = "#3d3734"
+base0 = "#3d3734";
 base1 = "#2b2624";
 base2 = "#211D1C";
 
@@ -10,12 +10,12 @@ highlight0 = "#ffe4d430";
 highlight1 = "#ffe4d414";
 highlight2 = "#ffe4d407";
 
-shadow0 = "#00000070"
+shadow0 = "#00000070";
 shadow1 = "#00000040";
 
 white0 = "#ffffffdd";
 white1 = "#ffffff70";
-white2 = "#ffffff30"
+white2 = "#ffffff30";
 white3 = "#ffffff10";
 
 green0 = "#A3CE9E";
@@ -35,22 +35,21 @@ yellow1 = "#FAB76370";
 yellow2 = "#FAB76340";
 orangeRed = "#FA8763";
 red0 = "#EE6A6F";
-red1 = "#EE6A6Fcc"
+red1 = "#EE6A6Fcc";
 red2 = "#EE6A6F40";
 
 purple0 = "#c594c5";
 
-
 // exportable json via `gulp`
 module.exports = {
-  "name": "Mariana (Pro)",
-  "type": "dark",
-  "colors": {
+  name: "Mariana (Pro)",
+  type: "dark",
+  colors: {
     // COLOR REFERENCE: https://code.visualstudio.com/docs/getstarted/theme-color-reference
 
     //  BASE COLORS
-    "focusBorder": highlight0,
-    "foreground": white0,
+    focusBorder: highlight0,
+    foreground: white0,
     "selection.background": white2,
     "widget.shadow": shadow1,
 
@@ -266,7 +265,7 @@ module.exports = {
     "gitDecoration.deletedResourceForeground": red0,
     "gitDecoration.untrackedResourceForeground": white1,
     "gitDecoration.conflictingResourceForeground": red0,
-    "gitDecoration.submoduleResourceForeground": white1
+    "gitDecoration.submoduleResourceForeground": white1,
 
     // BREADCRUMBS - The theme colors for breadcrumbs navigation
     // "breadcrumb.foreground": white0,
@@ -274,384 +273,388 @@ module.exports = {
     // "breadcrumb.activeSelectionForeground": white0,
     // "breadcrumbPicker.background": shadow0,
   },
-  "tokenColors": [{
-      "name": "Comment",
-      "scope": ["comment", "punctuation.definition.comment"],
-      "settings": {
-        "foreground": white1
-      }
+  tokenColors: [
+    {
+      name: "Comment",
+      scope: ["comment", "punctuation.definition.comment"],
+      settings: {
+        foreground: white1,
+      },
     },
     {
-      "name": "String",
-      "scope": "string",
-      "settings": {
-        "foreground": green0
-      }
+      name: "String",
+      scope: "string",
+      settings: {
+        foreground: green0,
+      },
     },
     {
-      "name": "Punctuation",
-      "scope": ["punctuation.definition"],
-      "settings": {
-        "foreground": teal0
-      }
+      name: "Punctuation",
+      scope: ["punctuation.definition"],
+      settings: {
+        foreground: teal0,
+      },
     },
     {
-      "name": "Number",
-      "scope": "constant.numeric",
-      "settings": {
-        "foreground": yellow0
-      }
+      name: "Number",
+      scope: "constant.numeric",
+      settings: {
+        foreground: yellow0,
+      },
     },
     {
-      "name": "Built-in constant",
-      "scope": "constant.language",
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": red0
-      }
+      name: "Built-in constant",
+      scope: "constant.language",
+      settings: {
+        fontStyle: "italic",
+        foreground: red0,
+      },
     },
     {
-      "name": "User-defined constant",
-      "scope": ["constant.character", "constant.other"],
-      "settings": {
-        "foreground": purple0
-      }
+      name: "User-defined constant",
+      scope: ["constant.character", "constant.other"],
+      settings: {
+        foreground: purple0,
+      },
     },
     {
-      "name": "Member Variable",
-      "scope": "variable.member",
-      "settings": {
-        "foreground": red0
-      }
+      name: "Member Variable",
+      scope: "variable.member",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "name": "Keyword",
-      "scope": [
+      name: "Keyword",
+      scope: [
         "keyword - keyword.operator",
         "keyword.operator.word",
         "keyword.control",
-        "keyword.operator.new.js"
+        "keyword.operator.new.js",
       ],
-      "settings": {
-        "foreground": purple0
-      }
+      settings: {
+        foreground: purple0,
+      },
     },
     {
-      "name": "Embedded Line Template Line JS",
-      "scope": "string.template.js meta.template.expression.js meta.embedded.line.js",
-      "settings": {
-        "foreground": white0
-      }
+      name: "Embedded Line Template Line JS",
+      scope:
+        "string.template.js meta.template.expression.js meta.embedded.line.js",
+      settings: {
+        foreground: white0,
+      },
     },
     {
-      "name": "Operators",
-      "scope": "keyword.operator",
-      "settings": {
-        "foreground": orangeRed
-      }
+      name: "Operators",
+      scope: "keyword.operator",
+      settings: {
+        foreground: orangeRed,
+      },
     },
     {
-      "name": "Punctuation",
-      "scope": ["punctuation.separator", "punctuation.terminator"],
-      "settings": {
-        "foreground": white1
-      }
+      name: "Punctuation",
+      scope: ["punctuation.separator", "punctuation.terminator"],
+      settings: {
+        foreground: white1,
+      },
     },
     {
-      "name": "Punctuation",
-      "scope": "punctuation.section",
-      "settings": {
-        "foreground": white0
-      }
+      name: "Punctuation",
+      scope: "punctuation.section",
+      settings: {
+        foreground: white0,
+      },
     },
     {
-      "name": "Accessor",
-      "scope": "punctuation.accessor",
-      "settings": {
-        "foreground": white1
-      }
+      name: "Accessor",
+      scope: "punctuation.accessor",
+      settings: {
+        foreground: white1,
+      },
     },
     {
-      "name": "Annotation Punctuation",
-      "scope": "punctuation.definition.annotation",
-      "settings": {
-        "foreground": teal0
-      }
+      name: "Annotation Punctuation",
+      scope: "punctuation.definition.annotation",
+      settings: {
+        foreground: teal0,
+      },
     },
     {
-      "name": "JavaScript Dollar",
-      "scope": [
+      name: "JavaScript Dollar",
+      scope: [
         "variable.other.dollar.only.js",
         "variable.other.object.dollar.only.js",
         "variable.type.dollar.only.js",
-        "support.class.dollar.only.js"
+        "support.class.dollar.only.js",
       ],
-      "settings": {
-        "foreground": teal0
-      }
+      settings: {
+        foreground: teal0,
+      },
     },
     {
-      "name": "Storage",
-      "scope": "storage",
-      "settings": {
-        "foreground": red0
-      }
+      name: "Storage",
+      scope: "storage",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "name": "Storage type",
-      "scope": "storage.type",
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": purple0
-      }
+      name: "Storage type",
+      scope: "storage.type",
+      settings: {
+        fontStyle: "italic",
+        foreground: purple0,
+      },
     },
     {
-      "name": "Entity name",
-      "scope": "entity.name.function",
-      "settings": {
-        "foreground": teal0
-      }
+      name: "Entity name",
+      scope: "entity.name.function",
+      settings: {
+        foreground: teal0,
+      },
     },
     {
-      "name": "Object Property JS",
-      "scope": "meta.object-literal.key.js",
-      "settings": {
-        "foreground": blue0
-      }
+      name: "Object Property JS",
+      scope: "meta.object-literal.key.js",
+      settings: {
+        foreground: blue0,
+      },
     },
     {
-      "name": "Entity name",
-      "scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
-      "settings": {
-        // "foreground": yellow0
-      }
+      name: "Entity name",
+      scope:
+        "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
+      settings: {
+        // foreground: yellow0,
+      },
     },
     {
-      "name": "Inherited class",
-      "scope": "entity.other.inherited-class",
-      "settings": {
-        "fontStyle": "italic underline",
-        "foreground": teal0
-      }
+      name: "Inherited class",
+      scope: "entity.other.inherited-class",
+      settings: {
+        fontStyle: "italic underline",
+        foreground: teal0,
+      },
     },
     {
-      "name": "Function argument",
-      "scope": "variable.parameter",
-      "settings": {
-        "fontStyle": "",
-        "foreground": yellow0
-      }
+      name: "Function argument",
+      scope: "variable.parameter",
+      settings: {
+        fontStyle: "",
+        foreground: yellow0,
+      },
     },
     {
-      "name": "Language variable",
-      "scope": "variable.language",
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": red0
-      }
+      name: "Language variable",
+      scope: "variable.language",
+      settings: {
+        fontStyle: "italic",
+        foreground: red0,
+      },
     },
     {
-      "name": "Tag name",
-      "scope": "entity.name.tag",
-      "settings": {
-        "fontStyle": "",
-        "foreground": red0
-      }
+      name: "Tag name",
+      scope: "entity.name.tag",
+      settings: {
+        fontStyle: "",
+        foreground: red0,
+      },
     },
     {
-      "name": "Tag attribute",
-      "scope": "entity.other.attribute-name",
-      "settings": {
-        "foreground": purple0
-      }
+      name: "Tag attribute",
+      scope: "entity.other.attribute-name",
+      settings: {
+        foreground: purple0,
+      },
     },
     {
-      "name": "Function call",
-      "scope": ["variable.function", "variable.annotation"],
-      "settings": {
-        "fontStyle": "",
-        "foreground": blue0
-      }
+      name: "Function call",
+      scope: ["variable.function", "variable.annotation"],
+      settings: {
+        fontStyle: "",
+        foreground: blue0,
+      },
     },
     {
-      "name": "Library function",
-      "scope": ["support.function", "support.macro"],
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": blue0
-      }
+      name: "Library function",
+      scope: ["support.function", "support.macro"],
+      settings: {
+        fontStyle: "italic",
+        foreground: blue0,
+      },
     },
     {
-      "name": "Library constant",
-      "scope": "support.constant",
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": purple0
-      }
+      name: "Library constant",
+      scope: "support.constant",
+      settings: {
+        fontStyle: "italic",
+        foreground: purple0,
+      },
     },
     {
-      "name": "Library class/type",
-      "scope": ["support.type", "support.class"],
-      "settings": {
+      name: "Library class/type",
+      scope: ["support.type", "support.class"],
+      settings: {
         // "fontStyle": "italic",
-        "foreground": blue0
-      }
+        foreground: blue0,
+      },
     },
     {
-      "name": "Invalid",
-      "scope": "invalid",
-      "settings": {
-        "foreground": white1
-      }
+      name: "Invalid",
+      scope: "invalid",
+      settings: {
+        foreground: white1,
+      },
     },
     {
-      "name": "Invalid deprecated",
-      "scope": "invalid.deprecated",
-      "settings": {
-        "foreground": white0
-      }
+      name: "Invalid deprecated",
+      scope: "invalid.deprecated",
+      settings: {
+        foreground: white0,
+      },
     },
     {
-      "name": "YAML Key",
-      "scope": "entity.name.tag.yaml",
-      "settings": {
-        "foreground": teal0
-      }
+      name: "YAML Key",
+      scope: "entity.name.tag.yaml",
+      settings: {
+        foreground: teal0,
+      },
     },
     {
-      "name": "YAML String",
-      "scope": "source.yaml string.unquoted",
-      "settings": {
-        "foreground": white0
-      }
+      name: "YAML String",
+      scope: "source.yaml string.unquoted",
+      settings: {
+        foreground: white0,
+      },
     },
     {
-      "name": "markup headings",
-      "scope": "markup.heading",
-      "settings": {
-        "fontStyle": "bold"
-      }
+      name: "markup headings",
+      scope: "markup.heading",
+      settings: {
+        fontStyle: "bold",
+      },
     },
     {
-      "name": "markup headings",
-      "scope": "markup.heading punctuation.definition.heading",
-      "settings": {
-        "foreground": red0
-      }
+      name: "markup headings",
+      scope: "markup.heading punctuation.definition.heading",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "name": "markup h1",
-      "scope": "markup.heading.1 punctuation.definition.heading",
-      "settings": {
-        "foreground": red0
-      }
+      name: "markup h1",
+      scope: "markup.heading.1 punctuation.definition.heading",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "name": "markup links",
-      "scope": ["string.other.link", "markup.underline.link"],
-      "settings": {
-        "foreground": blue0
-      }
+      name: "markup links",
+      scope: ["string.other.link", "markup.underline.link"],
+      settings: {
+        foreground: blue0,
+      },
     },
     {
-      "name": "markup bold",
-      "scope": "markup.bold",
-      "settings": {
-        "fontStyle": "bold"
-      }
+      name: "markup bold",
+      scope: "markup.bold",
+      settings: {
+        fontStyle: "bold",
+      },
     },
     {
-      "name": "markup italic",
-      "scope": "markup.italic",
-      "settings": {
-        "fontStyle": "italic"
-      }
+      name: "markup italic",
+      scope: "markup.italic",
+      settings: {
+        fontStyle: "italic",
+      },
     },
     {
-      "name": "markup bold/italic",
-      "scope": "markup.italic markup.bold | markup.bold markup.italic",
-      "settings": {
-        "fontStyle": "bold italic"
-      }
+      name: "markup bold/italic",
+      scope: "markup.italic markup.bold | markup.bold markup.italic",
+      settings: {
+        fontStyle: "bold italic",
+      },
     },
     {
-      "name": "markup hr",
-      "scope": "punctuation.definition.thematic-break",
-      "settings": {
-        "foreground": yellow0
-      }
+      name: "markup hr",
+      scope: "punctuation.definition.thematic-break",
+      settings: {
+        foreground: yellow0,
+      },
     },
     {
-      "name": "markup numbered list bullet",
-      "scope": "markup.list.numbered.bullet",
-      "settings": {
-        "foreground": green0
-      }
+      name: "markup numbered list bullet",
+      scope: "markup.list.numbered.bullet",
+      settings: {
+        foreground: green0,
+      },
     },
     {
-      "name": "markup blockquote",
-      "scope": [
+      name: "markup blockquote",
+      scope: [
         "markup.quote punctuation.definition.blockquote",
-        "markup.list punctuation.definition.list_item"
+        "markup.list punctuation.definition.list_item",
       ],
-      "settings": {
-        "foreground": yellow0
-      }
+      settings: {
+        foreground: yellow0,
+      },
     },
     {
-      "name": "markup punctuation",
-      "scope": "(text punctuation.definition.italic | text punctuation.definition.bold)",
-      "settings": {
-        "foreground": purple0
-      }
+      name: "markup punctuation",
+      scope:
+        "(text punctuation.definition.italic | text punctuation.definition.bold)",
+      settings: {
+        foreground: purple0,
+      },
     },
     {
-      "name": "diff.header",
-      "scope": ["meta.diff", "meta.diff.header"],
-      "settings": {
-        "foreground": purple0
-      }
+      name: "diff.header",
+      scope: ["meta.diff", "meta.diff.header"],
+      settings: {
+        foreground: purple0,
+      },
     },
     {
-      "name": "diff.deleted",
-      "scope": "markup.deleted",
-      "settings": {
-        "foreground": red0
-      }
+      name: "diff.deleted",
+      scope: "markup.deleted",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "name": "diff.inserted",
-      "scope": "markup.inserted",
-      "settings": {
-        "foreground": green0
-      }
+      name: "diff.inserted",
+      scope: "markup.inserted",
+      settings: {
+        foreground: green0,
+      },
     },
     {
-      "name": "diff.changed",
-      "scope": "markup.changed",
-      "settings": {
-        "foreground": lightYellow0
-      }
+      name: "diff.changed",
+      scope: "markup.changed",
+      settings: {
+        foreground: lightYellow0,
+      },
     },
     {
-      "name": "CSS Properties",
-      "scope": "support.type.property-name",
-      "settings": {
-        "fontStyle": "",
-        "foreground": white0
-      }
+      name: "CSS Properties",
+      scope: "support.type.property-name",
+      settings: {
+        fontStyle: "",
+        foreground: white0,
+      },
     },
     {
-      "scope": "constant.numeric.line-number.match",
-      "settings": {
-        "foreground": red0
-      }
+      scope: "constant.numeric.line-number.match",
+      settings: {
+        foreground: red0,
+      },
     },
     {
-      "scope": "message.error",
-      "settings": {
-        "foreground": red0
-      }
-    }
-  ]
-}
+      scope: "message.error",
+      settings: {
+        foreground: red0,
+      },
+    },
+  ],
+};
