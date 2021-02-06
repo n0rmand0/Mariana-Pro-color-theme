@@ -424,7 +424,7 @@ module.exports = {
       scope:
         "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
       settings: {
-        // foreground: yellow0,
+        foreground: yellow0,
       },
     },
     {
