@@ -422,8 +422,7 @@ module.exports = {
     },
     {
       name: "Entity name",
-      scope:
-        "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
+      scope: "entity.name",
       settings: {
         foreground: yellow0,
       },
