@@ -326,7 +326,7 @@ module.exports = {
     {
       name: "Keyword",
       scope: [
-        "keyword - keyword.operator",
+        "keyword",
         "keyword.operator.word",
         "keyword.control",
         "keyword.operator.new.js",
