@@ -1,5 +1,6 @@
 // set variables for easy color management
 transparent = "#00000000";
+
 // cool
 base0 = "#343D46";
 base1 = "#23292e";
@@ -131,7 +132,7 @@ module.exports = {
     "tab.unfocusedActiveForeground": white1,
     "tab.unfocusedInactiveForeground": white1,
 
-    // EDITOR COLOR - The most prominent editor colors are the token colors used for syntax highlighting and are base0d on the language grammar installed.
+    // EDITOR COLOR - The most prominent editor colors are the token colors used for syntax highlighting and are based on the language grammar installed.
     "editor.background": base0,
     "editor.foreground": white0,
 

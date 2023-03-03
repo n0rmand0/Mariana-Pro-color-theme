@@ -35,6 +35,11 @@
 				"label": "Mariana Pro (Gray)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/MarianaPro-gray-color-theme.json"
+			},
+			{
+				"label": "Mariana Pro (Black)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/MarianaPro-black-color-theme.json"
 			}
 		]
 	},
