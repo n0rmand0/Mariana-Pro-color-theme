@@ -1,7 +1,7 @@
 // set variables for easy color management
 transparent = "#00000000";
 
-// //warm
+// warm
 base0 = "#3d3734";
 base1 = "#2b2624";
 base2 = "#211D1C";

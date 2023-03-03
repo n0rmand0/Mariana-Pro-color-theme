@@ -1,5 +1,6 @@
 // set variables for easy color management
 transparent = "#00000000";
+
 // cool
 base0 = "#343D46";
 base1 = "#23292e";
